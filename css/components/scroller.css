@@ -1,0 +1,10 @@
+.theme-universal-nav.theme-scroller .theme-unav-links {
+	-webkit-transition:left 0.3s ease-out;
+}
+.theme-scroller .theme-nav-inner {
+    overflow:hidden;
+	margin-left:40px;
+}
+.theme-scroller .theme-unav-links {
+	padding:0;
+}

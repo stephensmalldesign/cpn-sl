@@ -1,0 +1,138 @@
+/** START MASTHEAD **/
+.theme-mast-options { /* icon and page title */
+	background:-moz-linear-gradient(center top,#A8A8A8 0%, #777777 100%) repeat scroll 0 0 transparent;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#A6A6A6', endColorstr='#787878');
+}
+/** END MASTHEAD **/
+
+/** START NAVIGATION **/
+.theme-universal-nav {
+	/*background:-moz-linear-gradient(center top , #2F3235 0%, #393B3D 1%, #3E4044 21%, #222427 100%) repeat scroll 0 0 transparent;*/
+	/*filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#2F3235', EndColorStr='#393B3D');*/
+	background-color:red;
+}
+.theme-unav-links li {
+	background:-moz-linear-gradient(center top , #56585D, #292B2F) repeat scroll 0 0 transparent;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#56585D', EndColorStr='#292B2F');
+}
+.theme-universal-nav li.theme-active {
+	background:-moz-linear-gradient(center top,#fff,#cfcfcf) repeat scroll 0 0 transparent;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#CDCDCD');
+}
+.theme-universal-nav li a {
+	-moz-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+}
+/* start navigation toggle button */
+.theme-toggle-nav {
+	-moz-border-radius:0 0 35% 35%;
+}
+.theme-anim-toggle {
+	-moz-transition:height 0.3s ease-out;
+	-o-transition:height 0.3s ease-out;
+	transition:height 0.3s ease-out;
+}
+/* end navigation toggle button, start carousel navigation */
+.theme-carousel-nav .theme-unav-links li {
+	filter:none;
+}
+.theme-dot {
+	-moz-border-radius:4px;
+	border-radius:4px;
+}
+.theme-anim-slide .theme-unav-links {
+	-moz-transition:left 0.3s ease-out;
+	-o-transition:left 0.3s ease-out;
+	transition:left 0.3s ease-out;
+}
+/* end carousel navigation, start drill down navigation */
+.theme-drill-nav ul.theme-selected li {
+	background:-moz-linear-gradient(center top,#5B595B 0%, #4B494B 100%) repeat scroll 0 0 transparent;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5B595B', endColorstr='#4B494B');
+}
+.theme-drill-nav .theme-active a.theme-title {
+	/*float:left; uncomment for IE7 only */
+}
+/* end drill down navigation, start tabbed navigation */
+.theme-universal-nav.theme-scroller .theme-unav-links {
+	-moz-transition:left 0.3s ease-out;
+	-o-transition:left 0.3s ease-out;
+	transition:left 0.3s ease-out;
+}
+/* end tabbed navigation */
+/** END NAVIGATION **/
+
+/** START LAYOUT **/
+/* start tile layout */
+.theme-zoom-tab {
+	-moz-border-radius:25% 25% 0 0;
+	border-radius:25% 25% 0 0;
+}.theme-zoomed-out .theme-zoom-tab {
+	-moz-border-radius:0;
+	border-radius:0;
+}
+.theme-tiles .theme-container {
+    -moz-transform:scale(0.5);
+	transform:scale(0.5);
+	-ms-transform:scale(0.5);
+	-o-transform:scale(0.5);
+}
+.theme-active .theme-container {
+	-moz-transform:scale(1);
+	transform:scale(1);
+	-ms-transform:scale(1);
+	-o-transform:scale(1);
+}
+.theme-tile-anim .theme-select-layout {
+	-moz-transition:left 0.3s linear;
+	-o-transition:left 0.3s linear;
+	transition:left 0.3s linear;
+}
+.theme-tile-anim #theme-content {
+	-moz-transition:height 0.3s linear;
+	-o-transition:height 0.3s linear;
+	transition:height 0.3s linear;
+}
+.theme-tile-anim .theme-active.component-control {
+	-moz-transition:all 0.3s linear;
+	-o-transition:all 0.3s linear;
+	transition:all 0.3s linear;
+}
+.theme-tile-anim .theme-active .theme-container {
+	-moz-transition:all 0.3s linear;
+	-o-transition:all 0.3s linear;
+	transition:all 0.3s linear;
+}
+/* end tile layout, start accordion layout */
+.theme-layout-accordion .theme-container-body {
+    -moz-transition:height 0.5s ease-in 0s;
+    -o-transition:height 0.5s ease-in 0s;
+    transition:height 0.5s ease-in 0s;
+}
+.theme-layout-accordion .theme-closed .theme-container-body  {
+    -moz-transition:height 0.5s ease-out 0.25s;
+    -o-transition:height 0.5s ease-out 0.25s;
+    transition:height 0.5s ease-out 0.25s;
+}
+/* end accordion layout, start carousel layout */
+.theme-layout-carousel-row {
+	-moz-transition:left 0.3s ease-out;
+	-o-transition:left 0.3s ease-out;
+	transition:left 0.3s ease-out;
+}
+/** END LAYOUT **/
+
+/** START LAYOUT **/
+.theme-container {
+	-moz-transition:opacity 0.3s ease-out;
+	-o-transition:opacity 0.3s ease-out;
+	transition:opacity 0.3s ease-out;
+}
+/** END LAYOUT **/
+
+/** START FOOTER **/
+#theme-footer {
+	background:-moz-linear-gradient(center bottom , #212327, #424448);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#424448', endColorstr='#212327');
+}
+/** END FOOTER **/

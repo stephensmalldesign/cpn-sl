@@ -1,0 +1,85 @@
+/** NAVIGATION **/
+.theme-carousel-nav {
+	height:50px;
+}
+.theme-carousel-nav .theme-nav-inner {
+	width:100%;
+}
+.theme-carousel-nav .theme-unav-links li {
+	width:100%;
+	left:-50px;
+    position:relative;
+	background:transparent !important;
+	border:none !important;
+}
+.theme-carousel-nav .theme-unav-links {
+	padding-left:40px;
+}
+.theme-carousel-nav .theme-unav-links li a {
+	width:100%;
+	text-align: center;
+	font-size:1em !important;
+	font-weight:normal !important;
+	padding:0 0 3px !important;
+	/* needed to create ellipsis for page names that are too long */
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width:100%;
+	cursor:default;
+	color:#DDDDDD !important;
+}
+.theme-anim-slide .theme-unav-links {
+	-webkit-transition:left 0.3s ease-out;
+}
+.theme-dot-holder {
+	display:none;
+}
+.theme-carousel-nav .theme-dot-holder {
+	display:block;
+	margin:auto;
+	max-width:100%;
+}
+.theme-dot {
+	height:8px;
+	width:8px;
+	background-color:#555555;
+	float:left;
+	margin:0 3px 3px;
+	-webkit-border-radius:4px;
+}
+.theme-dot.theme-active {
+	background-color:#999999;
+}
+.theme-universal-nav .theme-nav-left { 
+	position:absolute;
+	top:18px;
+	left:5px;
+}
+.theme-universal-nav .theme-nav-right { 
+	position:absolute;
+	top:18px;
+	right:5px;
+}
+
+/** LAYOUT **/
+.theme-layout-carousel-row {
+	position:relative;
+	left:0;
+	-webkit-transition:left 0.3s ease-out;
+	width:10000px;
+}
+.theme-layout-carousel-row .component-control {
+	float:left;
+	max-height:400px;
+    overflow-y:scroll;
+}
+.theme-layout-carousel-row .component-control:first-child {
+	width:50%;
+}
+.theme-layout-carousel-row .component-control .theme-container h2 {
+	border-top-style:none !important;
+}
+#theme-page .theme-carousel-nav {
+	display:block;
+}

@@ -1,0 +1,92 @@
+.theme-select-layout {
+	position:relative;
+	left:0;
+	width:10000px;
+}
+.theme-zoom-tab { /* the tab that allows the user to zoom out */
+    height:25px;
+    width:60px;
+    left:50%;
+    position:relative;
+	-webkit-border-top-left-radius:15px;
+	-webkit-border-top-right-radius:15px;
+	background:url("../images/w3_hp_sm_sprites.png") no-repeat scroll 22.5px -6595px #CCCCCC
+}
+.theme-zoomed-out .theme-zoom-tab {  /* do not display the zoom tab when already zoomed out */
+    border-color:black white;
+    border-style:none solid solid;
+    border-width:0 10px 12px;
+    width:0;
+    height:0;
+    left:50%;
+    position:relative;
+	-moz-border-radius:0;
+	-webkit-border-radius:0;
+}
+.theme-zoomed-overlay {
+	display:none;
+}
+.theme-zoomed-out .theme-zoomed-overlay {
+	display:inline;
+	position:absolute;
+	z-index:100;
+}
+.theme-select-layout .component-control {
+	float:left;
+}
+.theme-tile-anim #theme-content {
+	overflow:hidden;
+}
+.theme-zoomed-out #theme-content {  /* when zoomed out, the content area should have a fixed height */
+	height:300px !important;
+}
+.theme-zoomed-out .theme-active.component-control,
+.theme-tiles .component-control {  /* inactive controls, and all the controls while zoomed out, should be tiles */
+    margin:10px;
+    overflow:hidden;
+	border:1px solid #bbb;
+    height:280px;					/* this is h */
+    width:200px;					/* this is w */
+}
+.theme-zoomed-out .component-control {/* this is h, must overwrite inline height style on all components when zoomed out to tiles */
+    height:280px !important;			
+}
+.theme-zoomed-out .theme-active.component-control { /* this is w, must overwrite inline width style on active components when zoomed out */
+    width:200px !important;			
+}
+.theme-zoomed-out .theme-active .theme-container,
+.theme-tiles .theme-container {		/* this is the inner div of a control, it is scaled down 50% */
+    -webkit-transform:scale(0.5);	/* this is s */
+    position:relative;
+	height:560px;					/* this should be (1/s)*h */
+    width:400px;					/* this should be (1/s)*w */
+}
+.theme-zoomed-out .theme-container {	/* change top and left attributes of the controls to compensate for the 50% scale */
+    top:-140px;						/* this should be -s*h */
+    left:-100px;					/* this should be -s*w */
+}
+.theme-active .theme-container { /* make sure the active control is not tiled when zoomed in */
+	-webkit-transform:scale(1);
+	width:100%;
+}
+.theme-active.component-control { /* make sure the active control is not tiled when zoomed in */
+	border:none;
+    margin:0;
+    overflow:visible;
+	margin-left:10px;
+}
+.theme-select-layout .theme-container h2 { /* no skin border in this layout */
+	border-top-style:none !important;
+}
+.theme-tile-anim .theme-select-layout { /* tiles have an animation sliding left <=> right */
+	-webkit-transition:left 0.3s linear;
+}
+.theme-tile-anim #theme-content { /* animate the height of the content since it changes to match the current portlet view */
+	-webkit-transition:height 0.3s linear;
+}
+.theme-tile-anim .theme-active.component-control { /* animate the zoom on active controls only */
+	-webkit-transition:all 0.3s linear;
+}
+.theme-tile-anim .theme-active .theme-container { /* animate the zoom on active controls only */
+	-webkit-transition:all 0.3s linear;
+}

@@ -1,0 +1,201 @@
+@import "elements.less";
+@import "font-awesome.less";
+
+
+/* ---------------------------------------
+	Variables
+--------------------------------------- */
+@blank: rgb(255,255,255);
+@medium: rgb(6,45,117);
+@dark: rgb(3,38,107);
+@darkest: rgb(3,31,84);
+@body: rgb(245,245,248);
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Icons
+:: Accordion
+:: Slider
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+body {
+	background: @body;
+	.top-bar, .contain-to-grid {
+		border-bottom: 1px solid @darkest;
+		.gradient(@medium, @dark, @medium);
+		ul {
+			li {
+				background: transparent;
+				&:hover:not(.name), &.active:not(.name) {
+		    		background: none repeat scroll 0% 0% @darkest;
+		    		a { color: @blank; }
+		    	}
+		    	&.toggle-topbar {
+		    		span {
+		    			color: @blank;
+		    			display:block;
+		    			position: absolute;
+		    			right: 45px;
+		    		}
+		    		a {
+						background: transparent;
+						border-style: double;
+						border-width: 6px 0;
+						height: 2px;
+						width: 12px;
+						&:after {
+							background: transparent;
+							border-style: solid;
+							border-width: 1px 0;
+							content: '';
+							display: block;
+							height: 2px;
+							position: relative;
+							top: 2px;
+							width: 12px;
+						}
+
+		    		}
+		    	}
+		    	&.name {
+		    		.gradient(@medium, @dark, @medium);
+		    	}
+
+		    }
+		}
+		.logo {
+			a {
+				// waiting for SVG
+				// background: url(http://www.standardlife.ca/resources/images/sl_logo.gif) no-repeat;
+				// background-size: auto 45px;
+				// height: 50px;
+				// text-indent: -999em;
+				// width: 224px;
+			}
+		}
+	}
+
+
+
+	/* -----------------------------------------
+	   Icons
+	----------------------------------------- */
+	li [class^="icon-"], li [class*=" icon-"] {
+	    width: auto;
+	}
+	.button {
+		li [class^="icon-"], li [class*=" icon-"] {
+	    margin-bottom: -2px;
+	}
+	}
+
+
+
+
+
+
+
+
+
+
+	/* -----------------------------------------
+	   Accordion
+	----------------------------------------- */
+	/* Flexible Slide-to-top Accordion Style*/
+
+	.st-accordion {
+	    margin: 0 auto;
+	    min-width:270px;
+	    width:100%;
+	    ul li {
+	        border-bottom: 1px solid @dark;
+	        border-top:1px solid @blank;
+	        height: 50px;
+	        overflow: hidden;
+	        &:first-child {
+	        	border-top:none;
+	        }
+	        &.st-open > a {
+			    span { 
+				    .rotation(180deg);
+				}
+			}
+	    }
+	    ul li > a {
+    	    display: block;
+    	    line-height: 50px;
+    		outline:none;
+    		position: relative; 	
+    		padding: 0 10px;	
+    		span{
+				background: @body;
+				height: 14px;
+				margin-top: -7px;
+				position: absolute;
+				right: 10px;
+				text-indent:-9000px;
+				top: 50%;
+				width: 26px;
+				.transition(.5s);
+			}
+    	}
+	}
+	.st-content{
+	    padding: 5px 10px 30px;
+	    p {
+    	    padding: 0px 0px 15px; 
+    	}
+    	.tabs.mobile dd:first-child, .tabs.mobile li:first-child {
+		    padding-left: 0px !important;
+		}
+	}
+
+	/* -----------------------------------------
+	   Slider
+	----------------------------------------- */
+
+	.orbit-wrapper {
+		.orbit {
+			.orbit-slide {
+				.scale {
+					height: auto;
+					overflow: hidden;
+					position: relative;
+					width: 100%;
+					img {
+						height: 378px;
+						left: 50%;
+						margin-top: -189;
+						margin-left: -600px;
+						min-width: 1200px;
+						position: relative;
+						top: 50%;
+
+					}
+				}
+				.overimage {
+					bottom: 10px;
+					left: 10px;
+					position: absolute;
+					right: 10px;
+					top: 10px;
+					&.light {
+						color: @blank;
+						h4 {
+							color: @blank;
+						}
+					}
+				}
+			}
+		}
+	}
+
+/* Close body */
+}

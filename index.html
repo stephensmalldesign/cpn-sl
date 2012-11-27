@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="/wps/mobileTheme/WEB-INF/cache.mf">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="dynamic-content" href="res:/advisor-mobile/themes/html/mobileTheme/head.jsp"><!-- head node content spot -->
+
+
+  <!--  Foundation Framework  -->
+  <link rel="stylesheet/less" href="css/zurb/foundation.less">
+  <link rel="stylesheet/less" href="css/zurb/offcanvas.less">
+  <link rel="stylesheet/less" href="css/zurb/app.less">
+
+  <script src="js/zurb/modernizr.foundation.js"></script>
+  <script src="js/less/less-1.3.1.min.js"></script>
+  <script src="js/zurb/jquery.js"></script>
+  <script src="js/zurb/jquery.offcanvas.js"></script>
+
+
+</head>
+<body>
+
+  <!-- This appears as a tab at the top of the screen which allows the user to toggle the masthead in and out of view. -->
+  <!-- The masthead is at the top of the page and contains the logo and navigation. -->
+  <!-- To hide the masthead and footer, set this metadata on the page(s): "com.ibm.portal.theme.template.file.name.html" = "Plain.jsp" -->
+  <div id="theme-masthead" class="row masthead">
+    <div class="contain-to-grid fixed">
+      <nav class="top-bar">
+        <ul>
+          <!-- Title Area -->
+          <li class="name logo">
+          <h1>
+            <a href="home.html">Standard Life</a><!-- logo -->
+          </h1>
+          </li>
+          <li class="toggle-topbar"><span>Menu</span><a href="#"></a></li>
+        </ul>
+        
+        <!-- GLOBAL NAV -->
+        <section>
+
+
+
+          <ul class="right">
+            <li><a href="index.html" class="active"><!-- <i class="icon-home icon-large"></i> -->Home</a></li>
+            <li><a href="why.html">Why Standard Life</a></li>
+            <li><a href="products.html">Products &amp; Solutions</a></li>
+            <li class="has-dropdown">
+              <a href="#">Document Library</a>
+              <ul class="dropdown">
+                <li><a href="#">Look at this document!</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+         
+      </nav>
+    </div>
+    
+  </div><!-- end masthead -->
+  
+  <div id="theme-page">
+    <!-- this listNav dynamic spot renders the layout navigation -->
+    <div id="theme-content" class="row"><!-- layout container root -->
+
+      <!-- HOME BUTTON NAV-->
+      <ul>
+        <li><a href="index.html" class="active button"><!-- <i class="icon-home icon-large"></i> -->Home</a></li>
+        <li><a href="why.html" class="button">Why Standard Life</a></li>
+        <li><a href="products.html" class="button">Products &amp; Solutions</a></li>
+        <li><a href="#" class="button">Document Library</a></li>
+      </ul>
+
+      
+
+      <!-- ACCORDION -->
+
+            <!-- <div id="st-accordion" class="st-accordion">
+                <ul>
+                    <li>
+                        <a href="#">Page 1<span class="st-arrow">Open or Close</span></a>
+                        <div class="st-content">
+                            <p>She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+                            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
+                            <a class="button" href="#">Look, it's a button</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Page 2<span class="st-arrow">Open or Close</span></a>
+                        <div class="st-content">
+                            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Page 3<span class="st-arrow">Open or Close</span></a>
+                        <div class="st-content">
+                            <p>O my friend - but it is too much for my strength - I sink under the weight of the splendour of these visions!</p>
+                            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                            <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Page 4<span class="st-arrow">Open or Close</span></a>
+                        <div class="st-content">
+                            <dl class="tabs mobile">
+                              <dd class="active"><a href="#simple1">Simple Tab 1</a></dd>
+                              <dd><a href="#simple2">Simple Tab 2</a></dd>
+                              <dd class="hide-for-small"><a href="#simple3">Simple Tab 3</a></dd>
+                            </dl>
+                            <ul class="tabs-content">
+                              <li class="active" id="simple1Tab">This is simple tab 1s content. Pretty neat, huh?</li>
+                              <li id="simple2Tab">This is simple tab 2s content. Now you see it!</li>
+                              <li id="simple3Tab">This is simple tab 3s content.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>       -->
+
+      <!-- TABLES -->
+
+     <!--  <table class="twelve">
+        <thead>
+          <tr>
+            <th>Table Header</th>
+            <th>Table Header</th>
+            <th>Table Header</th>
+            <th>Table Header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Content</td>
+            <td>This is longer content</td>
+            <td>Content</td>
+            <td>Content</td>
+          </tr>
+          <tr>
+            <td>Content</td>
+            <td>This is longer content</td>
+            <td>Content</td>
+            <td>Content</td>
+          </tr>
+          <tr>
+            <td>Content</td>
+            <td>This is longer content</td>
+            <td>Content</td>
+            <td>Content</td>
+          </tr>
+          <tr>
+            <td>Content</td>
+            <td>This is longer content</td>
+            <td>Content</td>
+            <td>Content</td>
+          </tr>
+        </tbody>
+      </table> -->
+      
+    </div>
+  </div>
+  <div id="theme-footer" class="row">
+    <a rel="dynamic-content" href="res:/advisor-mobile/themes/html/mobileTheme/footer.jsp"></a><!-- footer dynamic spot outputs the footer links -->
+  </div><!-- end footer -->
+  <a rel="dynamic-content" href="res:/advisor-mobile/themes/html/mobileTheme/config.jsp"></a><!-- config content spot contains theme javascript includes -->
+  <!-- Included JS Files -->
+  <script src="js/zurb/jquery.js"></script>
+  <script src="js/zurb/jquery.foundation.reveal.js"></script>
+  <script src="js/zurb/jquery.foundation.orbit.js"></script>
+  <script src="js/zurb/jquery.foundation.forms.js"></script>
+  <script src="js/zurb/jquery.placeholder.js"></script>
+  <script src="js/zurb/jquery.foundation.tooltips.js"></script>
+  <script src="js/zurb/jquery.foundation.topbar.js"></script>
+  <script src="js/zurb/jquery.foundation.alerts.js"></script>
+  <script src="js/zurb/jquery.foundation.buttons.js"></script>
+  <script src="js/zurb/jquery.foundation.accordion.js"></script>
+  <script src="js/zurb/jquery.foundation.navigation.js"></script>
+  <script src="js/zurb/jquery.foundation.mediaQueryToggle.js"></script>
+  <script src="js/zurb/jquery.foundation.tabs.js"></script>
+  <script src="js/zurb/jquery.offcanvas.js"></script>
+  <script src="js/zurb/app.js"></script>
+  <script src="js/jquery.accordion.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript">
+      $(function() {
+    
+      $('#st-accordion').accordion({
+        oneOpenedItem : true
+      });
+      
+      });
+  </script>
+  
+</body>
+</html>

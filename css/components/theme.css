@@ -1,0 +1,180 @@
+/** RESET STYLES **/
+/*body {
+	font-family:arial;
+	margin:0;
+	background-color:#212327;
+}
+*/
+/** GENERAL STYLES **/
+/*.theme-hidden {
+	display:none;
+}
+.theme-invisible {
+	visibility:hidden;
+}
+.theme-clearing {
+	clear:both;
+}*/
+
+/** MASTHEAD **/
+/*#theme-masthead {
+	overflow:hidden;
+}
+.theme-mast-options {
+	background-color:#999;
+	background:-webkit-gradient(linear, 0% 20%, 0% 100%, from(#A8A8A8), to(#777777));	
+	height:25px;
+	list-style:none outside none;
+	margin:0;
+	padding:0;
+}
+.theme-mast-options li {
+	float: left;
+	margin:1px 5px 0;
+}
+.theme-user {
+	color:#333;
+	font-size:0.7em;
+	text-shadow:0 1px 2px #fff;
+}
+.theme-home{
+	padding:2px 0;
+}
+.theme-home a{
+	background:url("../images/portalLogoWhiteText.png") no-repeat scroll 0 0 transparent;
+	display:block;
+	height:18px;
+	width:95px;
+	text-indent:-999px;
+}
+*/
+/** NAVIGATION **/
+/*
+.theme-universal-nav {
+	position:relative;
+}
+.theme-nav-inner {
+	float:left;
+	margin-top:10px;
+	width:72%;
+}
+.theme-unav-links {
+	margin:0px 10px;
+	width:100000px;
+	position:relative;
+}
+.theme-unav-links li {
+	float:left;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#56585D), to(#292B2F), color-stop(.7,#333333));
+	border:1px solid #000;
+	border-bottom:none;
+	margin:0 2px 0 0;
+	padding:0;
+	list-style:none outside none;
+}
+.theme-universal-nav li a {
+	-webkit-font-smoothing: antialiased;
+    background:none repeat scroll 0 0 transparent;
+    color:#DDDDDD;
+	display:block;
+	text-decoration:none;
+	font-weight:bold;
+    overflow:visible;
+    padding:10px 25px 11px 15px;
+	text-shadow:1px 1px 2px #333333;
+    font-size:0.667em;
+}
+.theme-universal-nav li.theme-active {
+	background:-webkit-gradient(linear,0% 0%,0% 100%,from(#FFFFFF),to(#CFCFCF),color-stop(1,#333333));
+	color:#FFF;
+	border:1px solid #E6E6E6;
+	border-bottom-style:none;
+}
+.theme-unav-links .theme-active a{
+	color:#222;
+	text-shadow:none;
+}
+.theme-none-text {
+	color:#ccc;
+	margin-top:5px;
+}
+*/
+/** NAVIGATION ARROWS **/
+/*.theme-nav-left,
+.theme-nav-right {
+	position:relative;
+	float:left;
+	top:15px;
+	margin:0 10px;
+	height:16px;
+	width:16px;
+	background:url("../images/w3_hp_sm_sprites.png") no-repeat scroll 0 -8800px transparent;
+	z-index:200;
+}
+.theme-nav-right {
+	float:right;
+	background:url("../images/w3_hp_sm_sprites.png") no-repeat scroll 0 -8400px transparent;
+}
+.theme-nav-left.theme-disabled,
+.theme-nav-right.theme-disabled {
+	background-position:0 -8600px;
+	cursor:default;
+}
+.theme-nav-right.theme-disabled {
+	background-position:0 -8200px;
+}
+
+/** LAYOUT **/
+#theme-page {
+	overflow:hidden;
+	background-color:#fff;
+}
+#theme-page .theme-universal-nav {
+	display:none;
+}
+.theme-container {
+	-webkit-transition:opacity 0.3s ease-out;
+}
+.theme-container h2 {
+	margin:0px;
+	border-top: 3px solid #000000;
+	border-bottom: 1px solid #CCCCCC;
+	padding:5px;
+	font-size:100%;
+}
+.component-control:first-child .theme-container h2 {
+	border-top-style:none !important;
+}*/
+
+/** FOOTER **/
+/*#theme-footer {
+	background-color:#404040;
+	background:-webkit-gradient(linear,0% 0%,0% 100%,from(#424448),to(#212327));
+	border-top:3px solid black;
+	border-bottom:1px solid #888888;
+}
+#theme-footer ul {
+	list-style:circle;
+	padding:0 0 2px 25px;
+	margin:0;
+	line-height:14px;
+	border-bottom: 1px solid black;
+}
+#theme-footer li {
+    color:#666;
+    margin:20px 0;
+}
+#theme-footer a {
+    color:#FFF;
+    display:block;
+    text-decoration:none;
+    text-shadow:0 0 2px #000000;
+	font-size:0.9em;
+}
+#theme-footer .theme-leave-mobile {
+	border-top:1px solid #888888;
+    color:#DDDDDD;
+    padding:10px;
+    text-shadow:0 1px 2px #000000;
+}
+*/
