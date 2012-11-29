@@ -4824,7 +4824,7 @@ table.hide-for-medium {
     padding: 0;
     position: absolute;
     top: 50%;
-    right: 22.5px;
+    right: 20px;
     margin-top: -4px;
   }
   .top-bar ul > li.toggle-topbar:hover {

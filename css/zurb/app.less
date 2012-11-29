@@ -6,6 +6,7 @@
 	Variables
 --------------------------------------- */
 @blank: rgb(255,255,255);
+@light: rgb(213,213,226);
 @medium: rgb(6,45,117);
 @dark: rgb(3,38,107);
 @darkest: rgb(3,31,84);
@@ -117,11 +118,12 @@ body {
 	.st-accordion {
 	    margin: 0 auto;
 	    min-width:270px;
-	    width:100%;
+	    width:98%;
 	    ul li {
 	        border-bottom: 1px solid @dark;
-	        border-top:1px solid @blank;
-	        height: 50px;
+	        height: auto;
+	        margin-top: 20px;
+	        padding-bottom: 20px;
 	        overflow: hidden;
 	        &:first-child {
 	        	border-top:none;
@@ -134,31 +136,38 @@ body {
 	    }
 	    ul li > a {
     	    display: block;
-    	    line-height: 50px;
     		outline:none;
     		position: relative; 	
-    		padding: 0 10px;	
+    		padding: 0 50px 0 0; 
     		span{
-				background: @body;
+				background: @light;
 				height: 14px;
 				margin-top: -7px;
 				position: absolute;
 				right: 10px;
 				text-indent:-9000px;
-				top: 50%;
+				top: 16px;
 				width: 26px;
 				.transition(.5s);
+				ul li ul li {
+							border-bottom: none;
+	       					border-top:none;
+	        				height: auto;
+				}
 			}
     	}
 	}
 	.st-content{
-	    padding: 5px 10px 30px;
+	    padding: 10px 10px 30px 10px;
+	    position: relative;
 	    p {
     	    padding: 0px 0px 15px; 
     	}
-    	.tabs.mobile dd:first-child, .tabs.mobile li:first-child {
-		    padding-left: 0px !important;
-		}
+    	ul li {
+	        border-bottom: none;
+	        border-top:none;
+	        height: auto;
+	    }
 	}
 
 	/* -----------------------------------------
