@@ -34,6 +34,7 @@ body {
 		ul {
 			li {
 				background: transparent;
+				list-style: none;
 				&:hover:not(.name), &.active:not(.name) {
 		    		background: none repeat scroll 0% 0% @darkest;
 		    		a { color: @blank; }
@@ -85,8 +86,12 @@ body {
 		}
 	}
 	.content {
-		//padding: 15px;
+		padding: 15px;
+		ul, ol, dl {
+				list-style: none;
+		}
 	}
+
 
 
 
@@ -121,7 +126,7 @@ body {
 	    min-width:270px;
 	    width:98%;
 	    ul li {
-	        border-bottom: 1px solid @dark;
+	        border-bottom: 1px dashed @medium;
 	        height: auto;
 	        margin-top: 20px;
 	        padding-bottom: 20px;

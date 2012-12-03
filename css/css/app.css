@@ -772,6 +772,7 @@ body .contain-to-grid {
 body .top-bar ul li,
 body .contain-to-grid ul li {
   background: transparent;
+  list-style: none;
 }
 body .top-bar ul li:hover:not(.name),
 body .contain-to-grid ul li:hover:not(.name),
@@ -829,6 +830,14 @@ body .contain-to-grid .logo a {
   margin-left: 10px;
   padding: 0;
 }
+body .content {
+  padding: 15px;
+}
+body .content ul,
+body .content ol,
+body .content dl {
+  list-style: none;
+}
 body li [class^="icon-"],
 body li [class*=" icon-"] {
   width: auto;
@@ -843,7 +852,7 @@ body .st-accordion {
   width: 98%;
 }
 body .st-accordion ul li {
-  border-bottom: 1px solid #03266b;
+  border-bottom: 1px dashed #062d75;
   height: auto;
   margin-top: 20px;
   padding-bottom: 20px;

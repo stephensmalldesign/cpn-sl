@@ -57,7 +57,7 @@
 		// if set to true, only one item can be opened. Once one item is opened, any other that is opened will be closed first
 		oneOpenedItem	: false,
 		// speed of the open / close item animation
-		speed			: 400,
+		speed			: 600,
 		// easing of the open / close item animation
 		easing			: 'easeInOutExpo',
 		// speed of the scroll to action animation
@@ -164,13 +164,13 @@
 		},
 		// open / close item
 		_toggleItem			: function( $item ) {
-			$item.removeAttr('style');
+			
 			var $content = $item.find('div.st-content');
 			
 			( $item.hasClass( 'st-open' ) ) 
 					
 				? ( this.current = -1, $content.stop(true, true).fadeOut( this.options.speed ), $item.removeClass( 'st-open' ).stop().animate({
-					
+					height	: $item.data( 'originalHeight' )
 				}, this.options.speed, this.options.easing ) )
 				
 				: ( this.current = $item.index(), $content.stop(true, true).fadeIn( this.options.speed ), $item.addClass( 'st-open' ).stop().animate({
@@ -184,12 +184,10 @@
 			var instance	= instance || this, current;
 			
 			( instance.current !== -1 ) ? current = instance.current : current = instance.$el.find('li.st-open:last').index();
-
-            $(window).scrollTop($('.st-open a').position().top - 60);
-
-//			$('html, body').stop().animate({
-//				scrollTop	: ( instance.options.oneOpenedItem ) ? instance.$items.eq( current ).data( 'offsetTop' ) - 60 : instance.$items.eq( current ).offset().top
-//			}, instance.options.scrollSpeed, instance.options.scrollEasing );
+			
+			$('html, body').stop().animate({
+				scrollTop	: ( instance.options.oneOpenedItem ) ? instance.$items.eq( current ).data( 'offsetTop' ) : instance.$items.eq( current ).offset().top
+			}, instance.options.scrollSpeed, instance.options.scrollEasing );
 		
 		}
 	};
