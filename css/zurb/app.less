@@ -7,9 +7,11 @@
 --------------------------------------- */
 @blank: rgb(255,255,255);
 @light: rgb(213,213,226);
-@medium: rgb(6,45,117);
-@dark: rgb(3,38,107);
-@darkest: rgb(3,31,84);
+@medium: rgb(30,130,186);
+@dark: rgb(15,109,162);
+@darkest: rgb(16,89,128);
+@btnmedium: rgb(26,120,173);
+@btndark: rgb(13,96,144);
 @body: rgb(245,245,248);
 
 /* -------------------------------------------------- 
@@ -29,7 +31,7 @@
 body {
 	background: @body;
 	.top-bar, .contain-to-grid {
-		border-bottom: 1px solid @darkest;
+		.drop-shadow(0px, 0px, 8px, .4);
 		.gradient(@medium, @dark, @medium);
 		ul {
 			li {
@@ -40,30 +42,11 @@ body {
 		    		a { color: @blank; }
 		    	}
 		    	&.toggle-topbar {
-		    		span {
-		    			color: @blank;
-		    			display:block;
-		    			position: absolute;
-		    			right: 30px;
-		    		}
+		    		width: 42px;
+		    		left: 0px;
+		    		.gradient(@btnmedium, @btndark, @btnmedium);
 		    		a {
-						background: transparent;
-						border-style: double;
-						border-width: 6px 0;
-						height: 2px;
-						width: 12px;
-						&:after {
-							background: transparent;
-							border-style: solid;
-							border-width: 1px 0;
-							content: '';
-							display: block;
-							height: 2px;
-							position: relative;
-							top: 2px;
-							width: 12px;
-						}
-
+		    			left: 12px;
 		    		}
 		    	}
 		    	&.name {
@@ -76,11 +59,11 @@ body {
 			a {
 				// waiting for REAL SVG
 				background: url(../images/logo.svg) no-repeat;
-				background-size: auto 45px;
+				background-size: auto 35px;
 				height: 50px;
 				text-indent: -999em;
 				width: 160px;
-				margin-left:10px;
+				margin:3px auto;
 				padding:0;
 			}
 		}
