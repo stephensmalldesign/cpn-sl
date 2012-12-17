@@ -13,6 +13,7 @@
 @btnmedium: rgb(26,120,173);
 @btndark: rgb(13,96,144);
 @body: rgb(245,245,248);
+@link: rgb(15,31,112);
 
 /* -------------------------------------------------- 
    Table of Contents
@@ -29,7 +30,7 @@
 ----------------------------------------- */
 
 body {
-	background: @body;
+	background: url(../images/pattern-home.jpg) repeat @body;
 	.top-bar, .contain-to-grid {
 		background: url(../images/bkg-header-triangles.png) no-repeat top right @medium;
 		background-size: 80%;
@@ -85,10 +86,10 @@ body {
 				list-style: none;
 		}
 	}
-	.icon-huge {
-		font-size: 45px;
+	a {
+		color: @link;
 	}
-
+	
 
 
 
@@ -101,13 +102,29 @@ body {
 	.button {
 		li [class^="icon-"], li [class*=" icon-"] {
 	    margin-bottom: -2px;
+		}
 	}
+	.icon-huge {
+		font-size: 45px;
 	}
+	
 
 
+	/* -----------------------------------------
+	   Button Navigation
+	----------------------------------------- */
 
-
-
+	.buttonnav {
+		text-align: center;
+		.panel {
+			&.callout {
+				.gradient(@btnmedium, @btndark, @btnmedium);
+			}
+		}
+		.icon-huge {
+			color: gold;
+		}
+	}
 
 
 
