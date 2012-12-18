@@ -31,53 +31,56 @@
 
 body {
 	background: url(../images/pattern-home.jpg) repeat @body;
-	.top-bar, .contain-to-grid {
+	.contain-to-grid {
 		background: url(../images/bkg-header-triangles.png) no-repeat top right @medium;
-		background-size: 80%;
 		.drop-shadow(0px, 0px, 8px, .4);
-		ul {
-			li {
-				background: @darkest;
-				list-style: none;
-				&:hover:not(.name), &.active:not(.name) {
-		    		background: none repeat scroll 0% 0% @darkest;
-		    		a { color: @blank; }
-		    	}
-		    	&.toggle-topbar {
-		    		width: 42px;
-		    		left: 0px;
-		    		.gradient(@btnmedium, @btndark, @btnmedium);
-		    		a {
-		    			left: 12px;
-		    		}
-		    	}
-		    	&.name {
-		    		background: @darkest;
-		    	}
+		max-height: 45px;
+		.top-bar {
+			background: url(../images/bkg-header-triangles.png) no-repeat top right @medium;
+			ul {
+				li {
+					background: @darkest;
+					list-style: none;
+					&:hover:not(.name), &.active:not(.name) {
+			    		background: none repeat scroll 0% 0% @darkest;
+			    		a { color: @blank; }
+			    	}
+			    	&.toggle-topbar {
+			    		width: 42px;
+			    		left: 0px;
+			    		.gradient(@btnmedium, @btndark, @btnmedium);
+			    		a {
+			    			left: 12px;
+			    		}
+			    	}
+			    	&.name {
+			    		background: @darkest;
+			    	}
 
-		    }
-		}
-		.logo {
-			background: transparent;
-			a {
-				background: url(../images/logo.svg) no-repeat;
-				background-size: auto 35px;
-				text-indent: -999em;
-				padding:0;
-				position: relative;
-				top: -10px;
-				margin: 0 auto;
-				width: 160px;
+			    }
 			}
-			&:hover:not(.name), &.active:not(.name) {
-		    		background: transparent;
-		    		a { color: @blank; }
-		    	}
-			h1 {
-				&:hover {
-					background: transparent;
+			.logo {
+				background: transparent;
+				a {
+					background: url(../images/logo.svg) no-repeat;
+					background-size: auto 35px;
+					text-indent: -999em;
+					padding:0;
+					position: relative;
+					top: -10px;
+					margin: 0 auto;
+					width: 160px;
 				}
-			}	
+				&:hover:not(.name), &.active:not(.name) {
+			    		background: transparent;
+			    		a { color: @blank; }
+			    	}
+				h1 {
+					&:hover {
+						background: transparent;
+					}
+				}	
+			}
 		}
 	}
 	.content {
@@ -89,7 +92,7 @@ body {
 	a {
 		color: @link;
 	}
-	
+
 
 
 

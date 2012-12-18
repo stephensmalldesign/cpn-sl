@@ -35,25 +35,7 @@
           <li class="toggle-topbar"><a href="#"></a></li>
         </ul>
         
-        <!-- DUMMY GLOBAL NAV 
-        <section>
-          <ul class="right">
-            <li><a href="index.html" class="active"><i class="icon-home icon-large"></i>Home</a></li>
-            <li><a href="why.html">Why Standard Life</a></li>
-            <li class="has-dropdown">
-              <a href="products.html">Products &amp; Solutions</a>
-              <ul class="dropdown">
-                <li><a href="prod-mutual.html">Mutual Funds</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="#">Document Library</a>
-              <ul class="dropdown">
-                <li><a href="#">Look at this document!</a></li>
-              </ul>
-            </li>
-          </ul>
-        </section>-->
+        
 
         <section>
           <ul class="right">
@@ -83,7 +65,12 @@
   <div id="theme-page" class="row">
     <!-- this listNav dynamic spot renders the layout navigation -->
     <div id="theme-content" class="content">
-
+      <!-- TEMP SLIDE SHOW -->
+      <div id="featured">
+        <img src="http://foundation.zurb.com/images/orbit-demo/demo1.jpg" />
+        <img src="http://foundation.zurb.com/images/orbit-demo/demo2.jpg" />
+        <img src="http://foundation.zurb.com/images/orbit-demo/demo3.jpg" />
+      </div>
       <!-- SLIDES -->
       <nav class="buttonnav">
         <div class="row">
@@ -157,6 +144,27 @@
       });
       
       });
+  </script>
+  <script type="text/javascript">
+    $('#featured').orbit({
+      animation: 'fade',                  // fade, horizontal-slide, vertical-slide, horizontal-push
+      animationSpeed: 800,                // how fast animtions are
+      timer: true,                        // true or false to have the timer
+      resetTimerOnClick: false,           // true resets the timer instead of pausing slideshow progress
+      advanceSpeed: 4000,                 // if timer is enabled, time between transitions
+      pauseOnHover: false,                // if you hover pauses the slider
+      startClockOnMouseOut: false,        // if clock should start on MouseOut
+      startClockOnMouseOutAfter: 1000,    // how long after MouseOut should the timer start again
+      directionalNav: true,               // manual advancing directional navs
+      captions: true,                     // do you want captions?
+      captionAnimation: 'fade',           // fade, slideOpen, none
+      captionAnimationSpeed: 800,         // if so how quickly should they animate in
+      bullets: false,                     // true or false to activate the bullet navigation
+      bulletThumbs: false,                // thumbnails for the bullets
+      bulletThumbLocation: '',            // location from this file where thumbs will be
+      afterSlideChange: function(){},     // empty function
+      fluid: true                         // or set a aspect ratio for content slides (ex: '4x3')
+    });
   </script>
   
 </body>
