@@ -763,22 +763,22 @@ body {
 }
 body .top-bar,
 body .contain-to-grid {
-  border-bottom: 1px solid #031f54;
-  background: #062d75;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #03266b), color-stop(1, #062d75));
-  background: -ms-linear-gradient(bottom, #03266b, #062d75);
-  background: -moz-linear-gradient(center bottom, #03266b 0%, #062d75 100%);
+  background: url(../images/bkg-header-triangles.png) no-repeat top right #1e82ba;
+  background-size: 80%;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
 body .top-bar ul li,
 body .contain-to-grid ul li {
-  background: transparent;
+  background: #105980;
   list-style: none;
 }
 body .top-bar ul li:hover:not(.name),
 body .contain-to-grid ul li:hover:not(.name),
 body .top-bar ul li.active:not(.name),
 body .contain-to-grid ul li.active:not(.name) {
-  background: none repeat scroll 0% 0% #031f54;
+  background: none repeat scroll 0% 0% #105980;
 }
 body .top-bar ul li:hover:not(.name) a,
 body .contain-to-grid ul li:hover:not(.name) a,
@@ -786,49 +786,53 @@ body .top-bar ul li.active:not(.name) a,
 body .contain-to-grid ul li.active:not(.name) a {
   color: #ffffff;
 }
-body .top-bar ul li.toggle-topbar span,
-body .contain-to-grid ul li.toggle-topbar span {
-  color: #ffffff;
-  display: block;
-  position: absolute;
-  right: 30px;
+body .top-bar ul li.toggle-topbar,
+body .contain-to-grid ul li.toggle-topbar {
+  width: 42px;
+  left: 0px;
+  background: #1a78ad;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0d6090), color-stop(1, #1a78ad));
+  background: -ms-linear-gradient(bottom, #0d6090, #1a78ad);
+  background: -moz-linear-gradient(center bottom, #0d6090 0%, #1a78ad 100%);
 }
 body .top-bar ul li.toggle-topbar a,
 body .contain-to-grid ul li.toggle-topbar a {
-  background: transparent;
-  border-style: double;
-  border-width: 6px 0;
-  height: 2px;
-  width: 12px;
-}
-body .top-bar ul li.toggle-topbar a:after,
-body .contain-to-grid ul li.toggle-topbar a:after {
-  background: transparent;
-  border-style: solid;
-  border-width: 1px 0;
-  content: '';
-  display: block;
-  height: 2px;
-  position: relative;
-  top: 2px;
-  width: 12px;
+  left: 12px;
 }
 body .top-bar ul li.name,
 body .contain-to-grid ul li.name {
-  background: #062d75;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #03266b), color-stop(1, #062d75));
-  background: -ms-linear-gradient(bottom, #03266b, #062d75);
-  background: -moz-linear-gradient(center bottom, #03266b 0%, #062d75 100%);
+  background: #105980;
+}
+body .top-bar .logo,
+body .contain-to-grid .logo {
+  background: transparent;
 }
 body .top-bar .logo a,
 body .contain-to-grid .logo a {
   background: url(../images/logo.svg) no-repeat;
-  background-size: auto 45px;
-  height: 50px;
+  background-size: auto 35px;
   text-indent: -999em;
-  width: 160px;
-  margin-left: 10px;
   padding: 0;
+  position: relative;
+  top: -10px;
+  margin: 0 auto;
+  width: 160px;
+}
+body .top-bar .logo:hover:not(.name),
+body .contain-to-grid .logo:hover:not(.name),
+body .top-bar .logo.active:not(.name),
+body .contain-to-grid .logo.active:not(.name) {
+  background: transparent;
+}
+body .top-bar .logo:hover:not(.name) a,
+body .contain-to-grid .logo:hover:not(.name) a,
+body .top-bar .logo.active:not(.name) a,
+body .contain-to-grid .logo.active:not(.name) a {
+  color: #ffffff;
+}
+body .top-bar .logo h1:hover,
+body .contain-to-grid .logo h1:hover {
+  background: transparent;
 }
 body .content {
   padding: 15px;
@@ -852,7 +856,7 @@ body .st-accordion {
   width: 98%;
 }
 body .st-accordion ul li {
-  border-bottom: 1px dashed #062d75;
+  border-bottom: 1px dashed #1e82ba;
   height: auto;
   margin-top: 20px;
   padding-bottom: 20px;
