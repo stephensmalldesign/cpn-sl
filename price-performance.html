@@ -86,64 +86,47 @@
 
       <!-- add content -->
       <h1>Price &amp; Performance</h1>
-      <form id="pricePerformanceForm" class="rates jqtransformdone dijitForm" action="/wps/portal/Advisor-Portal/Products-Solutions/Rates-Price-Performance/Price-Performance/!ut/p/b1/hc5NDoIwEAXgs3AA02lLG1gWKqWhIgpV6cawIIaEn43x_CIh7pTZveR7L4McqhlQHFIIOLohNzav7tE8u2ls-k92_C4P8hwKw3EQA4CWppCU-AQsm0E9Ax9SlmUKQ7CHBLTBaVRKBUD8rf4VuYX8W1gA_DgBGwslWcHFYmtOmuOjFQx0xVROI0Yg5iv4vqmqPJiBLgoSJkSVPsrTaWhR2Y5ocH2oO70TwvPe_fzlaQ!!/dl4/d5/L0lDU0lKSmdrS0NsRUpDZ3BSQ1NBL29Ob2dBRUlRaGpFS0lRQUJHY1p3aklDa3FTaFNOQkFOYUEhIS80RzNhRDJnanZ5aENreUZNTlFpa3lGUDFTaklVUVEhIS9aN19ETURSOUFMNjFHSkYyMElUS0oyMzg3M0FVNy8wL2libS5pbnYvMjE1NjI2MjM5MTMzL2dldEZ1bmRz/" method="post">
-      <div class="rowElemFirst">
-        <h3>
-          Search criteria
-        </h3>
-        <label>
-          <strong class="required">*</strong>Required information
-        </label>
-        <br clear="all">
-      </div>
-      
-        <div class="rowElem checkbox-row">
+      <form>
+        <div class="row">
+          <h3>
+            Search criteria
+          </h3>
+          <label class="required">Required information</label>
           
-              <label class="fixedWidth">Product Type<strong class="required">*</strong>:</label>
-            
-            
-            <div widgetid="selectedFundString1" class="dijit dijitReset dijitInline dijitRadio dijitRadioChecked dijitChecked" role="presentation"><input aria-pressed="true" tabindex="0" id="selectedFundString1" value="M" style="-moz-user-select: none;" name="selectedFundString" checked="" class="dijitReset dijitCheckBoxInput" dojoattachpoint="focusNode" dojoattachevent="onclick:_onClick" type="radio"></div>
-          <label>
-            <span class="radioLabel">Mutual Funds</span>
-          </label>
-        </div>
-      
-        <div class="rowElem checkbox-row">
+          <fieldset class="radio">  
+            <legend class="right inline required">Product Type:</legend>
+              
+            <label class="secondary button row">
+              <span class="radioLabel">Mutual Funds</span>
+              <input name="product" type="radio">
+            </label>
+        
+            <label class="secondary button row">
+              <span class="radioLabel">Segregated Funds</span>
+              <input name="product" type="radio">
+            </label>
+   
+            <label class="secondary button row">
+              <span class="radioLabel">Segregated Funds – Signature Series</span>
+              <input name="product" type="radio">
+            </label>
+
+            <label class="custom-select row">
+              <select>
+                <option value="Aseries"><span>A-Series</span></option>
+                <option value="Eseries">E-Series</option>
+                <option value="Legendseries">Legend Series</option>
+                <option value="tseries">T-Series</option>
+                <option value="corporate">Corporate Class</option>
+                <option value="fseries">F-Series</option>
+              </select>
+            </label>
+          </fieldset>
           
-            
-              <label class="fixedWidth">&nbsp;</label>
-            
-            <div widgetid="selectedFundString2" class="dijit dijitReset dijitInline dijitRadio" role="presentation"><input tabindex="0" id="selectedFundString2" value="S" style="-moz-user-select: none;" name="selectedFundString" class="dijitReset dijitCheckBoxInput" dojoattachpoint="focusNode" dojoattachevent="onclick:_onClick" type="radio"></div>
-          <label>
-            <span class="radioLabel">Segregated Funds</span>
-          </label>
+
+          <input type="submit" class="button" value="Go!" />
         </div>
-      
-        <div class="rowElem ">
-          
-            
-              <label class="fixedWidth">&nbsp;</label>
-            
-            <div widgetid="selectedFundString3" class="dijit dijitReset dijitInline dijitRadio" role="presentation"><input tabindex="0" id="selectedFundString3" value="SS" style="-moz-user-select: none;" name="selectedFundString" class="dijitReset dijitCheckBoxInput" dojoattachpoint="focusNode" dojoattachevent="onclick:_onClick" type="radio"></div>
-          <label>
-            <span class="radioLabel">Segregated Funds – Signature Series</span>
-          </label>
-        </div>
-      
-      <div class="rowElem">
-        <label class="fixedWidth" id="dropDownLabel_PricePerformance_ns_Z7_DMDR9AL61GJF20ITKJ23873AU7_">
-          Series
-          <strong class="required">*</strong>:
-        </label>
-        <table widgetid="pricePeformanceDropDown_PricePerformance_ns_Z7_DMDR9AL61GJF20ITKJ23873AU7_" tabindex="0" id="pricePeformanceDropDown_PricePerformance_ns_Z7_DMDR9AL61GJF20ITKJ23873AU7_" aria-valuetext="A-Series" style="-moz-user-select: none;" class="dijit dijitReset dijitInline dijitLeft dijitDownArrowButton fixedWidthSelect dijitSelect" dojoattachpoint="_buttonNode,tableNode,focusNode" role="combobox" aria-haspopup="true" cellpadding="0" cellspacing="0"><tbody role="presentation"><tr role="presentation"><td class="dijitReset dijitStretch dijitButtonContents dijitButtonNode" role="presentation"><span class="dijitReset dijitInline dijitButtonText" dojoattachpoint="containerNode,_popupStateNode"><span class="dijitReset dijitInline dijitSelectLabel">A-Series</span></span><input name="selectedFundCategoryString" dojoattachpoint="valueNode" value="M" aria-hidden="true" type="hidden"></td><td class="dijitReset dijitRight dijitButtonNode dijitArrowButton dijitDownArrowButton" dojoattachpoint="titleNode" role="presentation"><div class="dijitReset dijitArrowButtonInner" role="presentation"></div><div class="dijitReset dijitArrowButtonChar" role="presentation">▼</div></td></tr></tbody></table>
-        <br clear="all">
-      </div>
-      <br clear="all">
-      <div class="button-divider">
-        <a href="javascript:{}" onclick="dojo.byId('pricePerformanceForm').submit();" class="button"><span>Go</span>
-        </a>
-      </div>
-    </form>
+      </form>
       <div id="st-accordion" class="st-accordion">
                 <ul>
                     <li>

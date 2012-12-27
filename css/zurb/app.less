@@ -22,6 +22,7 @@
 :: Icons
 :: Accordion
 :: Slider
+:: Forms
 */
 
 
@@ -91,6 +92,9 @@ body {
 	}
 	a {
 		color: @link;
+	}
+	button, .button {
+		background: @medium;
 	}
 
 
@@ -232,6 +236,67 @@ body {
 			}
 		}
 	}
+
+	/* -----------------------------------------
+	   Forms
+	----------------------------------------- */
+
+	label, legend {
+		background: transparent;
+		&.required {
+			&:before {
+				content: "*";
+				color: @medium;
+				font-size: 21px;
+				top: 6px;
+				margin-right: 3px;
+				position: relative;
+			}
+		}
+	}
+	fieldset {
+		&.radio {
+			padding-bottom: 10px;
+			label {
+				text-align: inherit;
+				span {
+					width: 80%;
+					float: left;
+				}
+				input {
+					float: right;
+					vertical-align: middle;
+				}
+			}
+		}
+		
+	}
+
+	
+
+	    .custom-select {
+	    	select {
+		        font: inherit;
+		        outline:none; /* remove focus ring from Webkit */
+		        background: #E9E9E9;
+		        border:1px solid #c3c3c3;
+		        width: 100%;
+		        height: 40px;
+		        option {
+		        	height: 40px;
+		        	span {
+		        		margin-top: 15px;
+		        		line-height: 20px;
+		        		padding-top: 10px;
+		        		position: relative;
+		        		top: 10px;
+		        	}
+		        }
+		    }
+	    }
+	    .no-pointer-events .custom-select:after {
+	        content: none;
+	    }
 
 /* Close body */
 }
