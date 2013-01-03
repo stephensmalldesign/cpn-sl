@@ -33,7 +33,7 @@
 
 body {
 	background: url(../images/pattern-home.jpg) repeat @body;
-	padding-top: 45px;
+	//padding-top: 45px;
 	.contain-to-grid {
 		background: url(../images/bkg-header-triangles.png) no-repeat top right @medium;
 		.drop-shadow(0px, 0px, 8px, .4);
@@ -160,6 +160,125 @@ body {
 	.icon-huge {
 		font-size: 45px;
 	}
+
+
+
+	/* -----------------------------------------
+	   Off-Canvas Nav
+	----------------------------------------- */
+
+/* Advanced Checkbox Hack */
+body { -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
+
+.main-header {
+background: #1e82ba url(../images/bkg-header-triangles.png) no-repeat right center;
+text-align: center;
+color: white;
+text-shadow: #00528a 0px -1px 0px;
+position: fixed;
+width: 100%;
+left: 0;
+-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+height: 45px;
+line-height: 45px;
+padding: 0;
+-webkit-transition: all 0.3s ease;
+z-index: 99;
+}
+.main-header h1 {
+	height: 45px;
+	line-height: 45px;
+	margin: 0 !important;
+	font-size: 22px;
+	color: white;
+	letter-spacing: 1px;
+	text-shadow: #00528a 0px -1px 0px;
+}
+.main-header a {
+	position: absolute;
+	left: 12px;
+	top: 0px;
+	color: white;
+	font-size: 32px;
+}
+
+.page-wrap {
+	float: right;
+	width: 100%;
+	-webkit-transition: width 0.3s ease;
+}
+
+.main-nav {
+	position: fixed;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background: #3B3B3B;
+	overflow: hidden;
+	-webkit-transition: width 0.3s ease;
+}
+.main-nav a {
+	display: block !important;
+	height: 45px !important;
+	line-height: 45px !important;
+	padding: 0 0 0 15px;
+	border-top: 1px solid #484848;
+	border-bottom: 1px solid #2E2E2E;
+	color: white;
+	background: -webkit-linear-gradient(#3e3e3e, #383838);
+	overflow:hidden;
+}
+.main-nav a.active {
+	background: -webkit-linear-gradient(#181818, #383838);
+}
+.main-nav a:hover, .main-nav a:focus {
+	background: -webkit-linear-gradient(#484848, #383838);
+}
+.main-nav:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 34px;
+	background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+
+.content {
+	width:100%;
+	margin-left: 0%;
+	padding: 60px 12px 0 ;
+	-webkit-transition: all 0.3s ease;
+	overflow: hidden;
+}
+
+#theme-masthead .close-menu {
+	display: none;
+}
+
+#main-nav:target {
+	width: 80%;
+}
+
+#main-nav:target + .page-wrap {
+	/* width: 20%; */
+}
+#main-nav:target + .page-wrap .open-menu {
+	display: none;
+}
+#main-nav:target + .page-wrap .close-menu {
+	display: block;
+}
+#main-nav:target + .page-wrap .main-header {
+	left: 80%;
+}
+#main-nav:target + .page-wrap .content {
+	float:left;
+	margin-left: 80%;
+}
 	
 
 
