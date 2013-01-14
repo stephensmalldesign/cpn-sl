@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+                content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.1/dojo/dojo.js"
+         data-dojo-config="async: false, parseOnLoad: true, mblThemeFiles: ['base','TabBar']"></script>
+<script type="text/javascript">
+                var lastId = 0;
+                require(["dojox/mobile", "dojo/dom", "dojo/dom-construct","dojo/_base/window", "dojo/dom-attr", "dojo/topic",  "dojo/_base/connect", 
+                "dojo/_base/declare", "dojox/mobile/parser", "dojox/mobile/deviceTheme", "dojo/ready", "dijit/registry",
+                    "dojox/mobile/compat", "dojox/mobile/View" ,"dojox/mobile/ViewController", "dojox/mobile/ListItem","dojox/mobile/ProgressIndicator","dojox/mobile/SwapView","dojox/mobile/Button",
+                    "dojox/mobile/ToolBarButton", "dojox/mobile/FixedSplitter", "dojox/mobile/Container",
+                    "dojox/mobile/ScrollableView","dojox/mobile/ScrollablePane","dojox/mobile/Container", "dojox/mobile/TabBar","dojox/mobile/RoundRectCategory", "dojox/mobile/ContentPane" ,
+                    ], function(mobile,dom, domConstruct, win, attr,topic,connect,declare, parser, deviceTheme, ready, registry, compat, View,ViewController,  ListItem, ProgressIndicator, SwapView){
+                        ready(function(){
+							var urlParams = getUrlParams();
+                            var currentNewsId = parseInt(urlParams['id']);
+							//LoadView(prevNewsId, false);
+							var view = LoadView(currentNewsId, domConstruct.create("DIV", null, win.body(), "first"));
+							ensureSlibingViewsPreloaded(view);
+							setTimeout(function(){registry.byId('newsdetail'+currentNewsId).show();},100)
+							//registry.byId('newsdetail'+currentNewsId).show();
+                         });
+						function LoadView(newsid, where)
+						{
+
+							var newView = new SwapView({
+								id:'newsdetail'+newsid,
+								selected:false
+													   //});
+							}, where);
+							//win.body().addChild(newView);
+							//domConstruct.place(newView, domConstruct.create("DIV", null, win.body()));
+							attr.set(newView.containerNode, 'newsid', newsid);
+							//newView.containerNode.innerHTML = 'NEWS VIEW' + newsid + '<br/>' + dojo.byId('newsDetailTemplate').innerHTML;
+							newView.startup();
+							var sp = new dojox.mobile.ScrollablePane(
+							{
+								
+							});
+							sp.containerNode.innerHTML= 'NEWS VIEW' + newsid + '<br/>' + dojo.byId('newsDetailTemplate').innerHTML;
+							newView.addChild(sp);
+							return newView;
+						}
+						
+						topic.subscribe("/dojox/mobile/viewChanged", function (view) { 
+							ensureSlibingViewsPreloaded(view);
+							
+							
+						});
+						function ensureSlibingViewsPreloaded(view)
+						{
+							var currentNewsId = parseInt(attr.get(view.containerNode, 'newsid'));
+							var leftView = view.getPreviousSibling();
+							if (leftView == null && currentNewsId > 0)
+							{							
+								var prevNewsId = currentNewsId -1;
+								LoadView(prevNewsId, domConstruct.create("DIV", null, view.containerNode, "before"));
+							}
+							var rightView = view.getNextSibling();
+							if (rightView == null && currentNewsId < 110)
+							{							
+								var nextNewsId = currentNewsId + 1;
+								LoadView(nextNewsId, domConstruct.create("DIV", null, view.containerNode, "after"));
+							}
+							registry.byId('newsdetail'+currentNewsId).show();
+						}
+
+                    });
+					
+					
+					
+					
+					function getUrlParams() {
+
+					  var paramMap = {};
+					  if (location.search.length == 0) {
+						return paramMap;
+					  }
+					  var parts = location.search.substring(1).split("&");
+					
+					  for (var i = 0; i < parts.length; i ++) {
+						var component = parts[i].split("=");
+						paramMap [decodeURIComponent(component[0])] = decodeURIComponent(component[1]);
+					  }
+					  return paramMap;
+					}
+        </script>
+</head>
+<body>
+	<div id="newsDetailTemplate" style="display:none">
+    <h1 data-dojo-type="dojox.mobile.Heading">News Detail</h1>
+    	<!-- add content -->
+      <div class="panel">
+        <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
+        <div data-dojo-type="dojox.mobile.ContentPane">
+        <time>November 13, 2012</time>
+          <p>The Standard Life Assurance Company of Canada ("Standard Life") today announced that its group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will optimize every aspect of claim submission, adjudication and processing.</p>
+    
+          <p>"All the building blocks for processing claims electronically will be in place, making our solution one of the most complete and efficient on the market today," said Jacques Latour, Vice-President, Sales, Group insurance. "The integrated solution is at the heart of the most recent changes we’ve undertaken to ensure we provide a world-class experience to our group insurance customers."</p>
+    
+          <p>"Our objectives in deploying the new technology are simple: making it easier for our customers to use our services and improving fraud detection to ultimately limit the cost of group plans. This is exactly what it will deliver: for instance, plan members will have less out-of pocket expenses and spend less time on paperwork. The reimbursement process will be simpler and faster. It will also be easier for plan members to have access to practical information such as claims history on the secure VIP Room. For plan sponsors, among other things, it will provide greater flexibility in the plan design," added Mr. Latour.</p>
+    
+          <h5>Technological advances</h5>
+          <p>Standard Life leverages a new powerful multi-benefit claims management platform since 2011. The fully automated platform already allows plan members to submit health claims online. In 2013, it will also allow an extended network of healthcare specialists such as physiotherapists, chiropractors, eye care providers, acupuncturists, massage therapists and naturopathic doctors in certain provinces and registered on the Telus Health eClaims web portal, to electronically submit claims at the point-of-care on behalf of patients who are insured with Standard Life. Pharmacists and dentists can already submit claims directly to Standard Life electronically.</p>
+          
+          <div style="text-align:center;">
+              <span class="radius label">-30-</span>
+          </div>
+          
+          <h5>About Standard Life</h5>
+          <p>Standard Life plc is a leading long-term savings and investment company headquartered in Edinburgh, Scotland. Standard Life has around 6 million customers worldwide and operates in the United Kingdom, Europe, North America and Asia Pacific, and globally with Standard Life Investments Ltd.</p>
+    
+          <p>In Canada, Standard Life has been doing business for almost 180 years. Standard Life Financial Inc., which wholly owns The Standard Life Assurance Company of Canada and Standard Life Mutual Funds Ltd., is Standard Life plc's largest operation outside the UK. With about 2,000 employees, it provides long-term savings, investment and insurance solutions to more than 1.4 million Canadians, including group benefit and retirement plan members. As of September 30, 2012, Standard Life plc had C$337 billion in assets under administration, including C$44 billion in Canada through Standard Life Financial.</p>
+    
+          <p>The Standard Life Assurance Company of Canada offers a wide range of benefits and plan types to suit the needs of both employers and employees across Canada. They include health, dental and drug plan solutions, health spending accounts, travel assistance, flex solutions and multinational pooling. It also offers integrated solutions to prevent and manage employees’ disabilities and facilitate their return to work.</p>
+    
+          <p><strong>Information:</strong></p>
+    
+          <p><strong>Mélanie Tardif, CPA, CMA</strong><br>
+          514-229-6199<br>
+          <a href="mailto:melanie.tardif@standardlife.ca">melanie.tardif@standardlife.ca</a>
+          </p>
+          <ul>
+            <li><a href="index.html" class="button">Return to Home</a></li>
+            <li><a href="news2.html" class="button">View all News</a></li>
+          </ul>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

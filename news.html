@@ -1,40 +1,122 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" manifest="/wps/mobileTheme/WEB-INF/cache.mf">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   <meta name="viewport" content="width=device-width">
-  <link rel="dynamic-content" href="res:/advisor-mobile/themes/html/mobileTheme/head.jsp"><!-- head node content spot -->
-
-  <title>NEWS | FAKE VERSION</title>
-  <!--  Foundation Framework  -->
-  <link rel="stylesheet/less" href="less/normalize.less">
-  <link rel="stylesheet/less" href="less/foundation.less">
-  <link rel="stylesheet/less" href="less/app.less">
-
-  <script src="js/modernizr.foundation.js"></script>
-  <script src="js/less-1.3.1.min.js"></script>
-   
-
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="dynamic-content" href="res:/advisor-mobile/themes/html/mobileTheme/head.jsp">
+<!-- head node content spot -->
+<title>NEWS | FAKE VERSION</title>
+<!--  Foundation Framework  -->
+<link rel="stylesheet/less" href="less/normalize.less">
+<link rel="stylesheet/less" href="less/foundation.less">
+<link rel="stylesheet/less" href="less/app.less">
+<link href="//ajax.googleapis.com/ajax/libs/dojo/1.8.1/dojox/mobile/themes/iphone/iphone.css"
+            rel="stylesheet">
+</link>
+<style>
+body, html {
+	height:100%;
+}
+</style>
+<script src="js/modernizr.foundation.js"></script>
+<script src="js/less-1.3.1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.1/dojo/dojo.js"
+     data-dojo-config="async: false, parseOnLoad: true, mblThemeFiles: ['base','TabBar']"></script>
+<script type="text/javascript">
+			var lastId = 10;
+			require(["dojox/mobile","dojo/query", "dojo/dom-attr", "dojo/_base/connect", 
+			"dojo/_base/declare", "dojox/mobile/parser", "dojox/mobile/deviceTheme", "dojo/ready", "dijit/registry",
+			    "dojox/mobile/compat", "dojox/mobile/View", "dojox/mobile/ListItem","dojox/mobile/ProgressIndicator","dojox/mobile/Button",
+				"dojox/mobile/ToolBarButton", "dojox/mobile/FixedSplitter", "dojox/mobile/Container",
+				"dojox/mobile/ScrollableView", "dojox/mobile/SwapView", "dojox/mobile/TabBar",
+				], function(mobile,query,attr,connect,declare, parser, deviceTheme, ready, registry, compat, View, ListItem, ProgressIndicator){
+					ready(function(){
+						var sv = registry.byId('newslist');
+						sv.adjustDestination = function(to, pos){
+							var dim = this.getDim();
+							var ch = dim.c.h; 
+							var dh = dim.d.h; 
+							if(to.y < dh - ch){ 
+								var list = registry.byId("nsl1");
+								/*
+								for(i=0;i<5;i++)
+								{
+									lastId++;
+									var le = dojo.clone(list.children[0]);
+									attr.set(le.children[1], "id", "newsbatch"+lastId);
+									dojo.place(le, list);
+									var d = dojo.create('div');
+									dojo.place(d, le);
+									
+									parser.parse(le);
+								}
+								*/
+								for(var i = 1; i <= 3; i++){
+									
+									var item1 = new ListItem({
+										icon: "images/i-icon-1.png",
+										label: "News Item "+lastId,
+										variableHeight: true,
+										moveTo: "#newsdetailpage&Id="+lastId
+									});
+									list.addChild(item1);
+									lastId++;
+								}
+							}
+						}
+						});
+						function loadPage(moveTo){
+							if(!(moveTo.match(/#(\w+)/))){ return; }
+							moveTo.match(/#(\w+)(.*)/);
+							var id = RegExp.$1;
+							var param = RegExp.$2;
+							if(!param){ return; }
+							var container = dojo.byId(id);
+							container.innerHTML = "";
+							var prog = ProgressIndicator.getInstance();
+							container.appendChild(prog.domNode);
+							prog.start();
+							setTimeout(function(){ // network latency simulation
+								prog.stop();
+								container.innerHTML = '<h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props=\'back:"Back to All News", moveTo:"#newslist"\'>'+param+'</h1>\n'+param;
+								parser.parse(container);
+							}, 1000);
+						}
+						
+						dojox.mobile.ViewEx = declare(
+							"dojox.mobile.ViewEx",
+							View,
+						{
+							onStartView: function(){
+								loadPage(location.hash);
+							},
+							onBeforeTransitionIn: function(moveTo, dir, transition, context, method){
+								loadPage("#"+moveTo);
+							}
+						
+					});
+				});
+	</script>
 </head>
-<body>
-
+<body style="visibility:hidden;">
+<div data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
   <!-- This appears as a tab at the top of the screen which allows the user to toggle the masthead in and out of view. -->
   <!-- The masthead is at the top of the page and contains the logo and navigation. -->
   <!-- To hide the masthead and footer, set this metadata on the page(s): "com.ibm.portal.theme.template.file.name.html" = "Plain.jsp" -->
-  <div id="theme-masthead" class="row masthead">
+  <div id="theme-masthead" class="row masthead"  data-dojo-type="dojox.mobile.Heading">
     <div class="contain-to-grid fixed">
       <nav class="top-bar">
         <ul>
           <!-- Title Area -->
           <li class="logo">
-          <h1>
-            <a href="index.html">Standard Life</a><!-- logo -->
-          </h1>
+            <h1> <a href="index.html">Standard Life</a>
+              <!-- logo -->
+            </h1>
           </li>
           <li class="toggle-topbar"><a href="#"></a></li>
         </ul>
-        
         <!-- DUMMY GLOBAL NAV 
         <section>
           <ul class="right">
@@ -54,13 +136,11 @@
             </li>
           </ul>
         </section>-->
-
         <section>
           <ul class="right">
             <li><a href="index.html" class="active"><i class="icon-home icon-large"></i>Home</a></li>
             <li><a href="news.html">All News</a></li>
-            <li class="has-dropdown">
-              <a href="products.html">Products &amp; Solutions</a>
+            <li class="has-dropdown"> <a href="products.html">Products &amp; Solutions</a>
               <ul class="dropdown">
                 <li><a href="mutual-landing.html">Mutual Funds</a></li>
                 <li><a href="seg-landing.html">Segregated funds Annuities Ideal Term Funds</a></li>
@@ -74,93 +154,56 @@
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </section>
-         
       </nav>
     </div>
-    
-  </div><!-- end masthead -->
-  
-  <div id="theme-page" class="row">
-    <!-- this listNav dynamic spot renders the layout navigation -->
-    <div id="theme-content" class="content news">
-
-      <!-- add content -->
-      <h1>Latest News</h1>
-      <ul>
-        <h2>November 2012</h2>
-        <li>
-          <a href="news-detail.html">
-            <div class="panel">
-              <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
-              <time>November 13, 2012</time>
-              <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
-            </div>
-          </a>
-          <a href="news-detail.html">
-            <div class="panel">
-              <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
-              <time>November 13, 2012</time>
-              <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
-            </div>
-          </a>
-        </li>
-        <h2>October 2012</h2>
-        <li>
-          <a href="news-detail.html">
-            <div class="panel">
-              <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
-              <time>November 13, 2012</time>
-              <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
-            </div>
-          </a>
-          <a href="news-detail.html">
-            <div class="panel">
-              <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
-              <time>November 13, 2012</time>
-              <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
-            </div>
-          </a>
-          <a href="news-detail.html">
-            <div class="panel">
-              <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
-              <time>November 13, 2012</time>
-              <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
-            </div>
-          </a>
-        </li>
-        <h2>August 2012</h2>
-        <li>
-          <a href="news-detail.html">
-            <div class="panel">
-              <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
-              <time>November 13, 2012</time>
-              <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
-            </div>
-          </a>
-          <a href="news-detail.html">
-            <div class="panel">
-              <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
-              <time>November 13, 2012</time>
-              <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
-            </div>
-          </a>
-          <a href="news-detail.html">
-            <div class="panel">
-              <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
-              <time>November 13, 2012</time>
-              <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
-            </div>
-          </a>
-        </li>
-      </ul>
   </div>
-  <div id="theme-footer" class="row">
-    <a rel="dynamic-content" href="res:/advisor-mobile/themes/html/mobileTheme/footer.jsp"></a><!-- footer dynamic spot outputs the footer links -->
-  </div><!-- end footer -->
-  <a rel="dynamic-content" href="res:/advisor-mobile/themes/html/mobileTheme/config.jsp"></a><!-- config content spot contains theme javascript includes -->
-  <!-- Included JS Files -->
-   
-  
-  
+  <!-- end masthead -->
+  <div id="theme-page" data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
+    <!-- this listNav dynamic spot renders the layout navigation -->
+    <div id="theme-content">
+      <div id="newslist" class="content news" data-dojo-type="dojox.mobile.ScrollableView"  data-dojo-props='scrollBar:true, fadeScrollBar:true' style="position:relative">
+        <!-- add content -->
+        <h1>Latest News</h1>
+        <ul id="nl">
+          <li>
+            <h2>August 2012</h2>
+            <ul id="nsl1" data-dojo-type="dojox.mobile.EdgeToEdgeList">
+              <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='icon:"images/i-icon-1.png", transition:"slide", href:"news-detail.html?id=1", variableHeight:true'>
+                <div class="panel">
+                  <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
+                  <time>November 13, 2012</time>
+                  <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
+                </div>
+              </li>
+              <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='icon:"images/i-icon-2.png", transition:"slide", href:"news-detail.html?id=2", variableHeight:true'>
+                <div class="panel">
+                  <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
+                  <time>November 13, 2012</time>
+                  <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
+                </div>
+              </li>
+              <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='icon:"images/i-icon-2.png", transition:"slide", href:"news-detail.html?id=3", variableHeight:true'>
+                <div class="panel">
+                  <h3>Standard Life to introduce end-to-end electronic group insurance claim processing</h3>
+                  <time>November 13, 2012</time>
+                  <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="newsdetailpage" class="content news" data-dojo-type="dojox.mobile.ViewEx">
+    </div>
+    <div id="theme-footer" class="row"> <a rel="dynamic-content" href="res:/advisor-mobile/themes/html/mobileTheme/footer.jsp"></a>
+      <!-- footer dynamic spot outputs the footer links -->
+    </div>
+    <!-- end footer -->
+    <a rel="dynamic-content" href="res:/advisor-mobile/themes/html/mobileTheme/config.jsp"></a>
+    <!-- config content spot contains theme javascript includes -->
+    <!-- Included JS Files -->
+  </div>
+</div>
+</div>
 </body>
 </html>
