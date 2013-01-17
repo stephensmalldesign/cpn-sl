@@ -41,46 +41,21 @@ body {
 		.drop-shadow(0px, 0px, 8px, .4);
 		max-height: 45px;
 		.top-bar {
-			background: url(../images/bkg-header-triangles.png) no-repeat top right @medium;
-			ul {
-				li {
-					background: @darkest;
-					list-style: none;
-					&:hover:not(.name), &.active:not(.name) {
-			    		background: none repeat scroll 0% 0% @darkest;
-			    		a { color: @blank; }
-			    	}
-			    	&.toggle-topbar {
-			    		width: 42px;
-			    		left: 0px;
-			    		.gradient(@btnmedium, @btndark, @btnmedium);
-			    		a {
-			    			left: 12px;
-			    		}
-			    	}
-			    	&.name {
-			    		background: @darkest;
-			    	}
-
-			    }
-			}
-			.logo {
-				background: transparent;
-				a {
-					background: url(../images/logo.svg) no-repeat;
-					background-size: auto 35px;
-					text-indent: -999em;
-					padding:0;
-					position: relative;
-					top: -10px;
-					margin: 0 auto;
-					width: 160px;
-				}
-				&:hover:not(.name), &.active:not(.name) {
-			    		background: transparent;
-			    		a { color: @blank; }
-			    	}
+			
 				h1 {
+					&.logo {
+						background: url(../images/logo.svg) no-repeat;
+						background-size: auto 35px;
+						text-indent: -999em;
+						padding:0;
+						position: relative;
+						top: -10px;
+						margin: 0 auto;
+						width: 160px;
+						&:hover:not(.name), &.active:not(.name) {
+					    		background: transparent;
+					    		a { color: @blank; }
+					    	}
 					&:hover {
 						background: transparent;
 					}
