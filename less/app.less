@@ -51,6 +51,44 @@ body {
 				height: 35px;
 			}	
 		}
+		a {
+			&.open-menu {
+				text-indent: -999em;
+				left: 0;
+				width: 45px;
+				background: #092a67;
+				border-right: 1px solid rgba(255,255,255,.05);
+				&:before {
+					background: url(../images/icons/openmenu.png) no-repeat;
+					background-size: 50%;
+					content: '';
+					display: inline-block;
+					height: 30px;
+					width: 40px;
+					position: absolute;
+					top: 16px;
+					left: 12px;
+				}
+			}
+			&.close-menu {
+				text-indent: -999em;
+				left: 0;
+				width: 45px;
+				background: #092a67;
+				border-right: 1px solid rgba(255,255,255,.05);
+				&:before {
+					background: url(../images/icons/openmenu.png) no-repeat;
+					background-size: 50%;
+					content: '';
+					display: inline-block;
+					height: 30px;
+					width: 40px;
+					position: absolute;
+					top: 16px;
+					left: 12px;
+				}
+			}
+		}
 	}
 	.content {
 		//padding: 15px;
@@ -243,6 +281,7 @@ z-index: 99;
 }
 .main-nav a:hover, .main-nav a:focus {
 	background: rgb(3,26,72);
+
 }
 
 
@@ -413,7 +452,46 @@ z-index: 99;
 		top: -20px;
 		left: 0px;
 		right: 0px;
-		padding-top: 15px;
+		padding: 15px 0 0;
+		.box-shadow(0px 4px 4px rgba(0,0,0,.05));
+		img {
+			width: 100%;
+			padding: 0 10px;
+			margin: 0 0 -30px;
+		}
+		.mblPageIndicatorContainer {
+			position: absolute;
+			right: -15px;
+			border: none;
+			background: #fbfbfb;
+			height: 10px;
+			top: 30px;
+			.box-shadow(0px 4px 4px rgba(0,0,0,.05));
+			.skew(50deg);
+			.border-radius(0px, 0px, 3px, 0px);
+			td {
+				padding: 0px 0px 6px;
+				&:first-child {
+					padding-left: 15px;
+				}
+				&:last-child {
+					padding-right: 20px;
+				}
+			}
+			.box-sizing;
+			.mblPageIndicatorDot {
+				background: #dfdfdf;
+				.rounded(50%);
+				height: 7px;
+				width: 7px;
+				.skew(-50deg);
+				.transition(.3s);
+			}
+			.mblPageIndicatorDotSelected {
+				background: gold;
+				.transition(.3s);
+			}
+		}
 	}
 
 	/* -----------------------------------------
@@ -501,10 +579,7 @@ z-index: 99;
 
 
 
-    .mblPageIndicatorContainer
-    {
-    	margin-right:10px;
-    }
+    
     .mblSimpleDialog
     {
     	padding:0px;
