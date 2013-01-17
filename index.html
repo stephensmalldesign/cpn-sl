@@ -8,9 +8,6 @@
   <link rel="stylesheet/less" href="less/normalize.less">
   <link rel="stylesheet/less" href="less/foundation.less">
   <link rel="stylesheet/less" href="less/app.less">
-<style>
-	
-	</style>
   <script src="js/modernizr.foundation.js"></script>
   <script src="js/less-1.3.1.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.1/dojo/dojo.js"
@@ -71,6 +68,15 @@
                 <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"420"' style="text-align:center">
                     <img alt="" src="images/banner3.png"/>
                 </div>
+                <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"1"' style="text-align:center">
+                    <img alt="" src="images/banner1.png"/>
+                </div>
+                <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"420"' style="text-align:center">
+                    <img alt="" src="images/banner2.png"/>
+                </div>
+                <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"420"' style="text-align:center">
+                    <img alt="" src="images/banner3.png"/>
+                </div>
                 <div data-dojo-type="dojox.mobile.PageIndicator"></div>
                 <br/>
           	</div><!--carousel-->
@@ -114,7 +120,7 @@
                 </div>
               </nav>
             </div>
-            <div data-dojo-type="dojox.mobile.Container">
+            <div data-dojo-type="dojox.mobile.Container" class="footer">
            		<table width="100%">
                 	<tr>
                     	<td>
@@ -127,20 +133,14 @@
                 </table>
             </div>
             <div id="dlg_confirm_nomobile" data-dojo-type="dojox.mobile.SimpleDialog">
-                <div class="mblSimpleDialogTitle">This links to a page without a<br/> mobile layout.</div>
-                <div class="mblSimpleDialogText">Open it anyway?</div>
-                <table width="100%" style="margin:0">
-                	<tr>
-                    	<td>
-                        	<button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton" onClick="hide('dlg_confirm_nomobile')" style="width:100%">No</button>
-                        </td>
-                        <td>
-	                        <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton mblBlueButton" onClick="hide('dlg_confirm_nomobile')" style="width:100%">Yes</button>
-                        </td>
-                    </tr>
-                </table>
-                
-                
+              
+              <div class="mblSimpleDialogTitle">This links to a page without a mobile layout.</div>
+              <div class="mblSimpleDialogText">Open it anyway?</div>
+              <div class="buttons">
+                <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton" onClick="hide('dlg_confirm_nomobile')">No</button>
+                <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton mblBlueButton" onClick="hide('dlg_confirm_nomobile')">Yes</button>
+              </div>
+              
             </div>
         </div><!-- theme-page -->
       </div><!-- page-wrap -->

@@ -239,13 +239,13 @@ z-index: 99;
 	}
 	&.home {
 		background: rgb(6,32,81) url(../images/logo.png) no-repeat;	
-		background-size: 45%;
+		background-size: auto 20px;
 		text-indent: -999em;
 		background-position: 10px 5px;
 		height: 35px;
 		&:hover {
 			background: rgb(6,32,81) url(../images/logo.png) no-repeat;	
-			background-size: 45%;
+			background-size: auto 20px;
 			text-indent: -999em;
 			background-position: 10px 5px;
 		}
@@ -485,7 +485,6 @@ z-index: 99;
 				height: 7px;
 				width: 7px;
 				.skew(-50deg);
-				.transition(.3s);
 			}
 			.mblPageIndicatorDotSelected {
 				background: gold;
@@ -579,27 +578,104 @@ z-index: 99;
 
 
 
-    
-    .mblSimpleDialog
-    {
-    	padding:0px;
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    .footer {
+    	position: relative;
+    	bottom: 0px;
+    	td {
+    		text-align: center;
+    	}
+    	a {
+    		font-size: 11px;
+    		text-decoration: underline;
+    		text-align: center;
+    		color: #007bc3;
+    	}
     }
-    .mblSimpleDialogDecoration {
-       border-radius: 10px 10px 0 0;
-    }
-    .mblSimpleDialogTitle
-    {
-    	text-align:left;
-    	padding:5px;
-    }
-    .mblSimpleDialogText
-    {
-    	text-align:left;
-    	padding:5px;
-    	color:yellow;
-    }
+
 
 
 
 /* Close body */
 }
+
+
+    .dj_gecko {
+    	body {
+    
+	    .mblSimpleDialog {
+	    	padding:0px;
+	    }
+	    .mblSimpleDialogDecoration {
+			.rounded(6px);
+			background-color: #063175;
+	       background-image: none;
+	       border: 1px solid #0b5ddf;
+	       //re-enable for dialog testing
+	       //display: block !important; top: 152px; left: 22px;
+	       .box-sizing;
+	       &:before {
+	       	content: '';
+	       	height: 52px;
+	       	width: 52px;
+	       	position: absolute;
+	       	top: -25px;
+	       	.rounded(50%);
+	       	background-color: #063175;
+	        border: 1px solid #0b5ddf;
+	        display: block;
+	        left: 50%;
+	        margin-left: -25px;
+	        clip:rect(0px,62px,25px,0px);
+	       }
+	       &:after {
+	       	content: '';
+	       	position: absolute;
+	       	top: -15px;
+	       	left: 50%;
+	       	background: url(../images/icons/exclamation-mark.png) no-repeat;
+	       	background-size: 75%;
+	       	height: 40px;
+	       	width: 40px;
+	       	margin-left: -14px;
+	       }
+	       .mblSimpleDialogContainer {
+	       		padding: 10px 0 0;
+		       	.mblSimpleDialogTitle {
+		    	text-align:left;
+		    	padding:5px 10px;
+		    	line-height: 1.4em;
+		    	font-size: 16px;
+		    	}
+		    	.mblSimpleDialogText {
+		    		text-align:left;
+		    		padding:5px 10px;
+		    		color:gold;
+		    	}
+		    	.buttons {
+		    		background: @blank;
+		    		padding: 5px;
+		    		.border-radius(0px, 5px, 5px, 0px);
+		    		button {
+		    			width: 49%;
+						border-radius: 8px;
+						color: @blank;
+						font-size: 16px;
+						.gradient( blue, rgb( 0, 84, 164 ), rgb( 0, 123, 195 ));
+						.box-shadow(0px 2px 6px rgba( 6, 76, 114, .2 ));
+						height: 37px;
+						border: none;
+		    			.box-sizing;
+		    		}
+		    	}
+	       }
+	    }
+	    
+	    
+	}
+	}
