@@ -37,31 +37,19 @@ body {
 	height: 100%;
 	background: url(../images/pattern-home.jpg) repeat @body;
 	//padding-top: 45px;
-	.contain-to-grid {
-		background: url(../images/bkg-header-triangles.png) no-repeat top right @medium;
-		.drop-shadow(0px, 0px, 8px, .4);
-		max-height: 45px;
-		.top-bar {
-			
-				h1 {
-					&.logo {
-						background: url(../images/logo.svg) no-repeat;
-						background-size: auto 35px;
-						text-indent: -999em;
-						padding:0;
-						position: relative;
-						top: -10px;
-						margin: 0 auto;
-						width: 160px;
-						&:hover:not(.name), &.active:not(.name) {
-					    		background: transparent;
-					    		a { color: @blank; }
-					    	}
-					&:hover {
-						background: transparent;
-					}
-				}	
-			}
+	.masthead {
+		h1 {
+			&.logo {
+				background: url(../images/logo.png) no-repeat;
+				background-size: 100%;
+				text-indent: -999em;
+				padding:0;
+				position: relative;
+				top: 5px;
+				margin: 0 auto;
+				width: 160px;
+				height: 35px;
+			}	
 		}
 	}
 	.content {
@@ -156,7 +144,8 @@ body { -webkit-animation: bugfix infinite 1s; }
 @-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
 
 .main-header {
-background: #1e82ba url(../images/bkg-header-triangles.png) no-repeat right center;
+background: rgb(12,47,115) url(../images/bkg-header-triangles.png) no-repeat right center;
+background-size: 60%;
 text-align: center;
 color: white;
 text-shadow: #00528a 0px -1px 0px;
@@ -172,15 +161,7 @@ padding: 0;
 -webkit-transition: all 0.3s ease;
 z-index: 99;
 }
-.main-header h1 {
-	height: 45px;
-	line-height: 45px;
-	margin: 0 !important;
-	font-size: 22px;
-	color: white;
-	letter-spacing: 1px;
-	text-shadow: #00528a 0px -1px 0px;
-}
+
 .main-header a {
 	position: absolute;
 	left: 12px;
