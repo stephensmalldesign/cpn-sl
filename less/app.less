@@ -14,6 +14,7 @@
 @btndark: rgb(13,96,144);
 @body: rgb(245,245,248);
 @link: rgb(15,31,112);
+@btnnav: rgb(255,138,0);
 
 /* -------------------------------------------------- 
    Table of Contents
@@ -295,14 +296,56 @@ z-index: 99;
 
 	.buttonnav {
 		text-align: center;
-		.panel {
-			&.callout {
-				.gradient(@btnmedium, @btndark, @btnmedium);
+			.row {
+				padding: 10px 20px 0;
+				.slide {
+					.box-sizing;
+					display: block;
+					float: left;
+					.panel {
+						&.callout {
+							border-radius: 50%;
+							width: 75px;
+							height: 75px;
+							background: @btnnav;
+							border: none;
+							margin: 0 auto 5px;
+						}
+					}
+					p {
+						font-size: 11px;
+						font-weight: bold;
+						max-width: 75px;
+						margin: 0 auto 10px;
+					}
+					.icon {
+						&.ghost-white {
+							background: url(../images/icons/ghost.png) no-repeat;
+							background-size: 50%;
+							width: 64px;
+							height: 64px;
+							display: block;
+						}
+					}
+				}
+				&.threecolumns {
+					.slide {
+						width: 33%;
+					}
+				}
+				&.twocolumns {
+					float: none;
+					.slide {
+						width: 50%;
+						&:first-child {
+							padding-left: 15%;
+						}
+						&:last-child {
+							padding-right: 15%;
+						}
+					}
+				}
 			}
-		}
-		.icon-huge {
-			color: gold;
-		}
 	}
 
 
