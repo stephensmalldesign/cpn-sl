@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" manifest="/wps/mobileTheme/WEB-INF/cache.mf">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   <meta name="viewport" content="width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+                content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
   <link rel="dynamic-content" href="res:/advisor-mobile/themes/html/mobileTheme/head.jsp"><!-- head node content spot -->
 
   <title>CONTACT US | FAKE VERSION</title>
@@ -14,340 +16,356 @@
   <script src="js/modernizr.foundation.js"></script>
   <script src="js/less-1.3.1.min.js"></script>
    
-
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.1/dojo/dojo.js"
+         data-dojo-config="async: false, parseOnLoad: true, mblThemeFiles: ['base', 'SwapView']"></script>
+<script src="js/common.js"></script>
+<script>
+	require(["dojox/mobile", "dojo/dom", "dojo/dom-construct","dojo/_base/window", "dojo/dom-attr", "dojo/topic",  "dojo/_base/connect", 
+                "dojo/_base/declare", "dojox/mobile/parser", "dojox/mobile/deviceTheme", "dojo/ready", "dijit/registry",
+                    "dojox/mobile/compat", "dojox/mobile/View" ,"dojox/mobile/ViewController", "dojox/mobile/ListItem","dojox/mobile/ProgressIndicator","dojox/mobile/SwapView","dojox/mobile/Button",
+                    "dojox/mobile/ToolBarButton", "dojox/mobile/FixedSplitter", "dojox/mobile/Container",
+                    "dojox/mobile/ScrollableView","dojox/mobile/ScrollablePane","dojox/mobile/Container", "dojox/mobile/TabBar","dojox/mobile/RoundRectCategory", "dojox/mobile/ContentPane" ,
+                    ]);
+	function ContactAll(from)
+	{
+		require(["dijit/registry"], 
+				 function(r){ 
+				 	r.byId(from).performTransition("#c-list", -1, "slide");
+			});
+	}
+</script>
 
 </head>
 <body>
 
-  <!-- This appears as a tab at the top of the screen which allows the user to toggle the masthead in and out of view. -->
-  <!-- The masthead is at the top of the page and contains the logo and navigation. -->
-  <!-- To hide the masthead and footer, set this metadata on the page(s): "com.ibm.portal.theme.template.file.name.html" = "Plain.jsp" -->
-  <div id="theme-masthead" class="row masthead">
-    <div class="contain-to-grid fixed">
-      <nav class="top-bar">
-        <ul>
-          <!-- Title Area -->
-          <li class="logo">
-          <h1>
-            <a href="index.html">Standard Life</a><!-- logo -->
-          </h1>
-          </li>
-          <li class="toggle-topbar"><a href="#"></a></li>
-        </ul>
+<div id="main" data-dojo-type="dojox.mobile.View" style="display:none">
+          
+
+    <div id="c-list" data-dojo-type="dojox.mobile.SwapView" >
+            <nav class="main-nav" id="main-nav">
+                        <a href="index.html" class="active slider">Home</a>
+                        <a href="news.html" class="slide">All News</a>
+                        <a href="mutual-landing.html" class="slide">Mutual Funds</a>
+                        <a href="seg-landing.html" class="slide">Segregated funds</a>
+                        <a href="#">Annuities Ideal Term Funds</a>
+                        <a href="gsr-landing.html" class="slide">Group Savings and Retirement</a>
+                        <a href="gi-landing.html" class="slide">Group Insurance</a>
+                        <a href="price-performance.html" class="slide">Price &amp; Performance</a>
+                        <a href="rates.html" class="slide">Rates</a>
+                        <a href="my-gps.html" class="slide">My GPS</a>
+                        <a href="contact.html" class="slide">Contact Us</a>
+              </nav>
+          <div class="page-wrap" >
+              <div id="theme-masthead" class="masthead main-header">
+                  <a href="#main-nav" class="open-menu">☰</a>
+                    <a href="#" class="close-menu">☰</a>
+                    <h1>Standard Life</h1>
+                
+              </div><!-- end masthead -->
+             <div id="theme-page1" class="row content">
+          <h1>Contact Us</h1>
+          <ul id="newslistvl" data-dojo-type="dojox.mobile.EdgeToEdgeList">
+                <li data-dojo-type="dojox.mobile.ListItem"  data-dojo-props="label:'Mutual Funds', moveTo:'c-mutual-funds'"></li>
+                <li data-dojo-type="dojox.mobile.ListItem"  data-dojo-props="label:'Individual Insurance / Investments', moveTo:'c-iii'"></li>
+                <li data-dojo-type="dojox.mobile.ListItem"  data-dojo-props="label:'Group Savings &amp; Retirement', moveTo:'c-gsar'"></li>
+                <li data-dojo-type="dojox.mobile.ListItem"  data-dojo-props="label:'Group Insurance', moveTo:'c-gi'"></li>
+                <li data-dojo-type="dojox.mobile.ListItem"  data-dojo-props="label:'Business Consultancy', moveTo:'c-bc'"></li>
+          </ul>
+          </div><!--theme-page-->
+          </div><!--page-wrap-->
+    </div><!--c-list-->
+        <div id="c-mutual-funds" data-dojo-type="dojox.mobile.SwapView" >
+        	  <div id="theme-masthead" class="masthead main-header"> <a onclick="ContactAll('c-mutual-funds')">&larr;</a>
+                <h1>Standard Life</h1>
+              </div>
+              <div id="theme-page2" class="row content" data-dojo-type="dojox.mobile.ScrollablePane">
+            <h2>Mutual Funds</h2>
+            <h3>Postal address</h3>
+            <p>Standard Life<br>
+            Retail Investments<br>
+            P.O. Box 11497, Stn. Centre-ville<br>
+            Montréal, Québec H3C 5S5</p>
         
-        <!-- DUMMY GLOBAL NAV 
-        <section>
-          <ul class="right">
-            <li><a href="index.html" class="active"><i class="icon-home icon-large"></i>Home</a></li>
-            <li><a href="why.html">Why Standard Life</a></li>
-            <li class="has-dropdown">
-              <a href="products.html">Products &amp; Solutions</a>
-              <ul class="dropdown">
-                <li><a href="prod-mutual.html">Mutual Funds</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="#">Document Library</a>
-              <ul class="dropdown">
-                <li><a href="#">Look at this document!</a></li>
-              </ul>
-            </li>
-          </ul>
-        </section>-->
-
-        <section>
-          <ul class="right">
-            <li><a href="index.html" class="active"><i class="icon-home icon-large"></i>Home</a></li>
-            <li><a href="news.html">All News</a></li>
-            <li class="has-dropdown">
-              <a href="products.html">Products &amp; Solutions</a>
-              <ul class="dropdown">
-                <li><a href="mutual-landing.html">Mutual Funds</a></li>
-                <li><a href="seg-landing.html">Segregated funds Annuities Ideal Term Funds</a></li>
-                <li><a href="gsr-landing.html">Group Savings and Retirement</a></li>
-                <li><a href="gi-landing.html">Group Insurance</a></li>
-              </ul>
-            </li>
-            <li><a href="price-performance.html">Price &amp; Performance</a></li>
-            <li><a href="rates.html">Rates</a></li>
-            <li><a href="my-gps.html">My GPS</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </section>
-         
-      </nav>
+            <h3>Regional centres</h3>
+        
+            <p><strong>Eastern Region</strong><br>
+            <a href="mailto:eastern@standardlife.ca">eastern@standardlife.ca</a></p>
+        
+            <p><strong>Central Region</strong><br>
+            <a href="mailto:central@standardlife.ca">central@standardlife.ca</a></p>
+        
+            <p><strong>Western Region</strong><br>
+            <a href="mailto:western@standardlife.ca">western@standardlife.ca</a></p>
+        
+            <p><strong>Toll-free number:</strong> 1-888-499-4995</p>
+            </div>
+        </div>
+        
+        <div  id="c-iii" data-dojo-type="dojox.mobile.SwapView" >
+                	  <div id="theme-masthead" class="masthead main-header"> <a onclick="ContactAll('c-iii')">&larr;</a>
+                <h1>Standard Life</h1>
+              </div>
+              <div id="theme-page3" class="row content" data-dojo-type="dojox.mobile.ScrollablePane">
+            <h2>Individual Insurance / Investments</h2>
+            <p>Standard Life's individual products are sold through independent brokers. For more information, contact Montréal or one of our Regional centres.</p>
+        
+            <h3>Postal addresses</h3>
+        
+            <p><strong>Individual investment<br>
+            </strong>Standard Life<br>
+            Retail investments<br>
+            P.O. Box 11497, Stn. Centre-ville<br>
+            Montréal, Québec H3C 5S5</p>
+        
+            <p><strong>Individual insurance<br>
+            </strong>Standard Life<br>
+            1245 Sherbrooke Street West<br>
+            Montréal, Québec H3G 1G3</p>
+        
+            <h3>Regional centres</h3>
+        
+            <p><strong>Eastern Region</strong><br>
+            <a href="mailto:eastern@standardlife.ca">eastern@standardlife.ca</a></p>
+        
+            <p><strong>Central Region</strong><br>
+            <a href="mailto:central@standardlife.ca">central@standardlife.ca</a></p>
+        
+            <p><strong>Western Region</strong><br>
+            <a href="mailto:western@standardlife.ca">western@standardlife.ca</a></p>
+        
+            <p><strong>Toll-free number:</strong> 1-888-499-4995</p>
+            </div>
+        </div>
+        
+        <div  id="c-gsar" data-dojo-type="dojox.mobile.SwapView"  >
+              <div id="theme-masthead" class="masthead main-header"> <a onclick="ContactAll('c-gsar')">&larr;</a>
+                <h1>Standard Life</h1>
+              </div>
+              <div id="theme-page4" class="row content" data-dojo-type="dojox.mobile.ScrollablePane">
+            <h2>Group Savings &amp; Retirement</h2>
+            <h3>Calgary</h3>
+        
+            <p>The Standard Life Building<br>
+            639 - 5th Avenue South West, Suite 1500<br>
+            Calgary, Alberta T2P 0M9<br>
+            <br>
+            <strong>Telephone</strong>: 403-531-1100 or 1-800-805-1631<br>
+            <strong>Fax</strong>: 403-531-1149<br>
+            <a href="mailto:westerncanada.grouppension@standardlife.ca">westerncanada.grouppension@standardlife.ca</a></p>
+        
+            <h3>Halifax</h3>
+        
+            <p>1791 Barrington Street, Suite 1010<br>
+            Halifax, Nova Scotia B3J 3L1<br>
+            <br>
+            <strong>Telephone</strong>: 902-423-8888 or 1-800-563-1833<br>
+            <strong>Fax</strong>: 902-423-7083<br>
+            <a href="mailto:atlanticcanada.grouppension@standardlife.ca">atlanticcanada.grouppension@standardlife.ca</a></p>
+        
+            <h3>London</h3>
+        
+            <p>255 Queens Avenue, Suite 1280<br>
+            London, Ontario N6A 5R8<br>
+            <br>
+            <strong>Telephone</strong>: 519-672-6063 or 1-800-268-9714<br>
+            <strong>Fax</strong>: 519-672-3148<br>
+            <a href="mailto:ontariocanada.grouppension@standardlife.ca">ontariocanada.grouppension@standardlife.ca</a></p>
+        
+            <h3>Montréal</h3>
+        
+            <p>1245 Sherbrooke Street West, Suite 700<br>
+            Montréal, Québec H3G 1G3<br>
+            <br>
+            <strong>Telephone</strong>: 514-499-7999 ext. 6699 or 1-877-499-9555, ext. 6699<br>
+            <strong>Fax</strong>: 514-841-6673<br>
+            <a href="mailto:easterncanada.grouppension@standardlife.ca">easterncanada.grouppension@standardlife.ca</a></p>
+        
+            <h3>Ottawa</h3>
+        
+            <p>1565 Carling Avenue, Suite 502<br>
+            Ottawa, Ontario K1Z 8R1<br>
+            <br>
+            <strong>Telephone</strong>: 1-877-499-9555, ext. 6699<br>
+            <strong>Fax</strong>: 514-841-6673<br>
+            <a href="mailto:easterncanada.grouppension@standardlife.ca">easterncanada.grouppension@standardlife.ca</a></p>
+        
+            <h3>Québec City</h3>
+        
+            <p>1220 Lebourgneuf Blvd., Suite 250<br>
+            Québec, Québec G2K 2G4<br>
+            <br>
+            <strong>Telephone</strong>: 418-684-2400 or 1-800-503-2358<br>
+            <strong>Fax</strong>: 418-681-7164<br>
+            <a href="mailto:easterncanada.grouppension@standardlife.ca">easterncanada.grouppension@standardlife.ca</a></p>
+        
+            <h3>Toronto</h3>
+        
+            <p>100 Sheppard Ave E., Suite 1138<br>
+            North York, Ontario M2N 6N5<br>
+            <br>
+            <strong>Telephone</strong>: 416-224-3535 or 1-800-827-5747<br>
+            <strong>Fax</strong>: 416-224-3434<br>
+            <a href="mailto:ontariocanada.grouppension@standardlife.ca">ontariocanada.grouppension@standardlife.ca</a></p>
+        
+            <h3>Vancouver</h3>
+        
+            <p>The Standard Life Building<br>
+            625 Howe Street, Suite 900<br>
+            Vancouver, British Columbia V6C 2T6<br>
+            <br>
+            <strong>Telephone</strong>: 604-664-8030 or 1-800-663-1784<br>
+            <strong>Fax</strong>: 604-664-8033<br>
+            <a href="mailto:westerncanada.grouppension@standardlife.ca">westerncanada.grouppension@standardlife.ca</a></p>
+            </div>
+        </div>
+        
+        <div  id="c-gi" data-dojo-type="dojox.mobile.SwapView" >
+              <div id="theme-masthead" class="masthead main-header"> <a onclick="ContactAll('c-gi')">&larr;</a>
+                <h1>Standard Life</h1>
+              </div>
+              <div id="theme-page5" class="row content" data-dojo-type="dojox.mobile.ScrollablePane">
+            <h2>Group Insurance</h2>
+            <h3>Calgary</h3>
+        
+            <p>The Standard Life Building<br>
+            639 - 5th Avenue South West, Suite 1500<br>
+            Calgary, Alberta T2P 0M9<br>
+            <br>
+            <strong>Telephone</strong>: 403-296-9400, ext. 1100 or 1-800-805-1631<br>
+            <strong>Fax</strong>: 403-531-1147<br>
+            <a href="mailto:westerncanada.groupinsurance@standardlife.ca">westerncanada.groupinsurance@standardlife.ca</a></p>
+        
+            <h3>Edmonton</h3>
+        
+            <p>The Standard Life Centre<br>
+            10405 Jasper Avenue, Suite 550<br>
+            Edmonton, Alberta T5J 3N4<br>
+            <br>
+            <strong>Telephone</strong>: 780-944-0688 or 1-888-944-0600<br>
+            <strong>Fax</strong>: 780-425-8810<br>
+            <a href="mailto:westerncanada.groupinsurance@standardlife.ca">westerncanada.groupinsurance@standardlife.ca</a></p>
+        
+            <h3>London</h3>
+        
+            <p>255 Queens Avenue, Suite 1280<br>
+            London, Ontario N6A 5R8<br>
+            <br>
+            <strong>Telephone</strong>: 519-672-6063 or 1-800-268-9714<br>
+            <strong>Fax</strong>: 519-672-3148<br>
+            <a href="mailto:ontariocanada.groupinsurance@standardlife.ca">ontariocanada.groupinsurance@standardlife.ca</a></p>
+        
+            <h3>Montréal</h3>
+        
+            <p>2045 Stanley Street, 7<sup>th</sup> Floor<br>
+            Montréal, Québec H3A 2V4<br>
+            <br>
+            <strong>Telephone</strong>: 514-841-6642 or 1-800-363-4360<br>
+            <strong>Fax</strong>: 514-841-6672<br>
+            <a href="mailto:easterncanada.groupinsurance@standardlife.ca">easterncanada.groupinsurance@standardlife.ca</a></p>
+        
+            <h3>Ottawa</h3>
+        
+            <p>1565 Carling Avenue, Suite 502<br>
+            Ottawa, Ontario K1Z 8R1<br>
+            <br>
+            <strong>Telephone</strong>: 613-737-5203 or 1-800-263-3219<br>
+            <strong>Fax</strong>: 613-230-3404<br>
+            <a href="mailto:easterncanada.groupinsurance@standardlife.ca">easterncanada.groupinsurance@standardlife.ca</a></p>
+        
+            <h3>Québec City</h3>
+        
+            <p>1220 Lebourgneuf Blvd., Suite 250<br>
+            Québec, Québec G2K 2G4<br>
+            <br>
+            <strong>Telephone</strong>: 418-684-2400 or 1-800-503-2358<br>
+            <strong>Fax</strong>: 418-681-7164<br>
+            <a href="mailto:easterncanada.groupinsurance@standardlife.ca">easterncanada.groupinsurance@standardlife.ca</a></p>
+        
+            <h3>Toronto</h3>
+        
+            <p>100 Sheppard Avenue East, Suite 1158<br>
+            Toronto, Ontario M2N 6N5<br>
+            <br>
+            <strong>Telephone</strong>: 416-224-3535 or 1-800-465-2581<br>
+            <strong>Fax</strong>: 416-224-3433<br>
+            <a href="mailto:ontariocanada.groupinsurance@standardlife.ca">ontariocanada.groupinsurance@standardlife.ca</a></p>
+        
+            <h3>Vancouver</h3>
+        
+            <p>The Standard Life Building<br>
+            625 Howe Street, Suite 900<br>
+            Vancouver, British Columbia V6C 2T6<br>
+            <br>
+            <strong>Telephone</strong>: 604-664-8030 or 1-800-663-1784<br>
+            <strong>Fax</strong>: 604-664-8033<br>
+            <a href="mailto:westerncanada.groupinsurance@standardlife.ca">westerncanada.groupinsurance@standardlife.ca</a></p>
+        
+            <h3>Winnipeg</h3>
+        
+            <p>155 Carlton Street, Suite 1640<br>
+            Winnipeg, Manitoba R3C 3H8<br>
+            <br>
+            <strong>Telephone</strong>: 204-949-4241 or 1-800-663-7372<br>
+            <strong>Fax</strong>: 204-956-2530<br>
+            <a href="mailto:westerncanada.groupinsurance@standardlife.ca">westerncanada.groupinsurance@standardlife.ca</a></p>
+            
+            <h3>Principal office</h3>
+        
+            <p>Standard Life<br>
+            Standard Life Assurance Company of Canada<br>
+            1245 Sherbrooke Street West<br>
+            Montréal, Québec H3G 1G3</p>
+        
+            <h3>Regional centres</h3>
+        
+            <p><strong>Eastern Region</strong><br>
+            <a href="mailto:eastern@standardlife.ca">eastern@standardlife.ca</a></p>
+        
+            <p><strong>Central Region</strong><br>
+            <a href="mailto:central@standardlife.ca">central@standardlife.ca</a></p>
+        
+            <p><strong>Western Region</strong><br>
+            <a href="mailto:western@standardlife.ca">western@standardlife.ca</a></p>
+        
+            <p><strong>Toll-free number:</strong> 1-888-499-4995</p>
+            </div>
+        </div>
+        
+        <div  id="c-bc" data-dojo-type="dojox.mobile.SwapView" >
+                      <div id="theme-masthead" class="masthead main-header"> <a onclick="ContactAll('c-bc')">&larr;</a>
+                <h1>Standard Life</h1>
+              </div>
+              <div id="theme-page6" class="row content" data-dojo-type="dojox.mobile.ScrollablePane">
+            <h2>Business Consultancy</h2>
+            <h3>Principal office</h3>
+        
+            <p>Standard Life<br>
+            Standard Life Assurance Company of Canada<br>
+            1245 Sherbrooke Street West<br>
+            Montréal, Québec H3G 1G3</p>
+        
+            <h3>Regional centres</h3>
+        
+            <p><strong>Eastern Region</strong><br>
+            <a href="mailto:eastern@standardlife.ca">eastern@standardlife.ca</a></p>
+        
+            <p><strong>Central Region</strong><br>
+            <a href="mailto:central@standardlife.ca">central@standardlife.ca</a></p>
+        
+            <p><strong>Western Region</strong><br>
+            <a href="mailto:western@standardlife.ca">western@standardlife.ca</a></p>
+        
+            <p><strong>Toll-free number:</strong> 1-888-499-4995</p>
+            </div>
+        </div>
+      
     </div>
-    
-  </div><!-- end masthead -->
-  
-  <div id="theme-page" class="row">
-    <!-- this listNav dynamic spot renders the layout navigation -->
-    <div id="theme-content" class="content">
+  </div>
+</div>
 
-      <!-- add content -->
-      <h1>Contact Us</h1>
-      <div id="st-accordion" class="st-accordion">
-                <ul>
-                    <li>
-                        <a href="#">Mutual Funds<span class="st-arrow ">Open or Close</span></a>
-                        <div class="st-content">
-                            <h3>Postal address</h3>
-                            <p>Standard Life<br>
-                            Retail Investments<br>
-                            P.O. Box 11497, Stn. Centre-ville<br>
-                            Montréal, Québec H3C 5S5</p>
-
-                            <h3>Regional centres</h3>
-
-                            <p><strong>Eastern Region</strong><br>
-                            <a href="mailto:eastern@standardlife.ca">eastern@standardlife.ca</a></p>
-
-                            <p><strong>Central Region</strong><br>
-                            <a href="mailto:central@standardlife.ca">central@standardlife.ca</a></p>
-
-                            <p><strong>Western Region</strong><br>
-                            <a href="mailto:western@standardlife.ca">western@standardlife.ca</a></p>
-
-                            <p><strong>Toll-free number:</strong> 1-888-499-4995</p>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">Individual Insurance / Investments<span class="st-arrow">Open or Close</span></a>
-                        <div class="st-content">
-                            <p>Standard Life's individual products are sold through independent brokers. For more information, contact Montréal or one of our Regional centres.</p>
-
-                            <h3>Postal addresses</h3>
-
-                            <p><strong>Individual investment<br>
-                            </strong>Standard Life<br>
-                            Retail investments<br>
-                            P.O. Box 11497, Stn. Centre-ville<br>
-                            Montréal, Québec H3C 5S5</p>
-
-                            <p><strong>Individual insurance<br>
-                            </strong>Standard Life<br>
-                            1245 Sherbrooke Street West<br>
-                            Montréal, Québec H3G 1G3</p>
-
-                            <h3>Regional centres</h3>
-
-                            <p><strong>Eastern Region</strong><br>
-                            <a href="mailto:eastern@standardlife.ca">eastern@standardlife.ca</a></p>
-
-                            <p><strong>Central Region</strong><br>
-                            <a href="mailto:central@standardlife.ca">central@standardlife.ca</a></p>
-
-                            <p><strong>Western Region</strong><br>
-                            <a href="mailto:western@standardlife.ca">western@standardlife.ca</a></p>
-
-                            <p><strong>Toll-free number:</strong> 1-888-499-4995</p>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">Group Savings &amp; Retirement<span class="st-arrow">Open or Close</span></a>
-                        <div class="st-content">
-                            <h3>Calgary</h3>
-
-                            <p>The Standard Life Building<br>
-                            639 - 5th Avenue South West, Suite 1500<br>
-                            Calgary, Alberta T2P 0M9<br>
-                            <br>
-                            <strong>Telephone</strong>: 403-531-1100 or 1-800-805-1631<br>
-                            <strong>Fax</strong>: 403-531-1149<br>
-                            <a href="mailto:westerncanada.grouppension@standardlife.ca">westerncanada.grouppension@standardlife.ca</a></p>
-
-                            <h3>Halifax</h3>
-
-                            <p>1791 Barrington Street, Suite 1010<br>
-                            Halifax, Nova Scotia B3J 3L1<br>
-                            <br>
-                            <strong>Telephone</strong>: 902-423-8888 or 1-800-563-1833<br>
-                            <strong>Fax</strong>: 902-423-7083<br>
-                            <a href="mailto:atlanticcanada.grouppension@standardlife.ca">atlanticcanada.grouppension@standardlife.ca</a></p>
-
-                            <h3>London</h3>
-
-                            <p>255 Queens Avenue, Suite 1280<br>
-                            London, Ontario N6A 5R8<br>
-                            <br>
-                            <strong>Telephone</strong>: 519-672-6063 or 1-800-268-9714<br>
-                            <strong>Fax</strong>: 519-672-3148<br>
-                            <a href="mailto:ontariocanada.grouppension@standardlife.ca">ontariocanada.grouppension@standardlife.ca</a></p>
-
-                            <h3>Montréal</h3>
-
-                            <p>1245 Sherbrooke Street West, Suite 700<br>
-                            Montréal, Québec H3G 1G3<br>
-                            <br>
-                            <strong>Telephone</strong>: 514-499-7999 ext. 6699 or 1-877-499-9555, ext. 6699<br>
-                            <strong>Fax</strong>: 514-841-6673<br>
-                            <a href="mailto:easterncanada.grouppension@standardlife.ca">easterncanada.grouppension@standardlife.ca</a></p>
-
-                            <h3>Ottawa</h3>
-
-                            <p>1565 Carling Avenue, Suite 502<br>
-                            Ottawa, Ontario K1Z 8R1<br>
-                            <br>
-                            <strong>Telephone</strong>: 1-877-499-9555, ext. 6699<br>
-                            <strong>Fax</strong>: 514-841-6673<br>
-                            <a href="mailto:easterncanada.grouppension@standardlife.ca">easterncanada.grouppension@standardlife.ca</a></p>
-
-                            <h3>Québec City</h3>
-
-                            <p>1220 Lebourgneuf Blvd., Suite 250<br>
-                            Québec, Québec G2K 2G4<br>
-                            <br>
-                            <strong>Telephone</strong>: 418-684-2400 or 1-800-503-2358<br>
-                            <strong>Fax</strong>: 418-681-7164<br>
-                            <a href="mailto:easterncanada.grouppension@standardlife.ca">easterncanada.grouppension@standardlife.ca</a></p>
-
-                            <h3>Toronto</h3>
-
-                            <p>100 Sheppard Ave E., Suite 1138<br>
-                            North York, Ontario M2N 6N5<br>
-                            <br>
-                            <strong>Telephone</strong>: 416-224-3535 or 1-800-827-5747<br>
-                            <strong>Fax</strong>: 416-224-3434<br>
-                            <a href="mailto:ontariocanada.grouppension@standardlife.ca">ontariocanada.grouppension@standardlife.ca</a></p>
-
-                            <h3>Vancouver</h3>
-
-                            <p>The Standard Life Building<br>
-                            625 Howe Street, Suite 900<br>
-                            Vancouver, British Columbia V6C 2T6<br>
-                            <br>
-                            <strong>Telephone</strong>: 604-664-8030 or 1-800-663-1784<br>
-                            <strong>Fax</strong>: 604-664-8033<br>
-                            <a href="mailto:westerncanada.grouppension@standardlife.ca">westerncanada.grouppension@standardlife.ca</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">Group Insurance<span class="st-arrow">Open or Close</span></a>
-                        <div class="st-content">
-                            <h3>Calgary</h3>
-
-                            <p>The Standard Life Building<br>
-                            639 - 5th Avenue South West, Suite 1500<br>
-                            Calgary, Alberta T2P 0M9<br>
-                            <br>
-                            <strong>Telephone</strong>: 403-296-9400, ext. 1100 or 1-800-805-1631<br>
-                            <strong>Fax</strong>: 403-531-1147<br>
-                            <a href="mailto:westerncanada.groupinsurance@standardlife.ca">westerncanada.groupinsurance@standardlife.ca</a></p>
-
-                            <h3>Edmonton</h3>
-
-                            <p>The Standard Life Centre<br>
-                            10405 Jasper Avenue, Suite 550<br>
-                            Edmonton, Alberta T5J 3N4<br>
-                            <br>
-                            <strong>Telephone</strong>: 780-944-0688 or 1-888-944-0600<br>
-                            <strong>Fax</strong>: 780-425-8810<br>
-                            <a href="mailto:westerncanada.groupinsurance@standardlife.ca">westerncanada.groupinsurance@standardlife.ca</a></p>
-
-                            <h3>London</h3>
-
-                            <p>255 Queens Avenue, Suite 1280<br>
-                            London, Ontario N6A 5R8<br>
-                            <br>
-                            <strong>Telephone</strong>: 519-672-6063 or 1-800-268-9714<br>
-                            <strong>Fax</strong>: 519-672-3148<br>
-                            <a href="mailto:ontariocanada.groupinsurance@standardlife.ca">ontariocanada.groupinsurance@standardlife.ca</a></p>
-
-                            <h3>Montréal</h3>
-
-                            <p>2045 Stanley Street, 7<sup>th</sup> Floor<br>
-                            Montréal, Québec H3A 2V4<br>
-                            <br>
-                            <strong>Telephone</strong>: 514-841-6642 or 1-800-363-4360<br>
-                            <strong>Fax</strong>: 514-841-6672<br>
-                            <a href="mailto:easterncanada.groupinsurance@standardlife.ca">easterncanada.groupinsurance@standardlife.ca</a></p>
-
-                            <h3>Ottawa</h3>
-
-                            <p>1565 Carling Avenue, Suite 502<br>
-                            Ottawa, Ontario K1Z 8R1<br>
-                            <br>
-                            <strong>Telephone</strong>: 613-737-5203 or 1-800-263-3219<br>
-                            <strong>Fax</strong>: 613-230-3404<br>
-                            <a href="mailto:easterncanada.groupinsurance@standardlife.ca">easterncanada.groupinsurance@standardlife.ca</a></p>
-
-                            <h3>Québec City</h3>
-
-                            <p>1220 Lebourgneuf Blvd., Suite 250<br>
-                            Québec, Québec G2K 2G4<br>
-                            <br>
-                            <strong>Telephone</strong>: 418-684-2400 or 1-800-503-2358<br>
-                            <strong>Fax</strong>: 418-681-7164<br>
-                            <a href="mailto:easterncanada.groupinsurance@standardlife.ca">easterncanada.groupinsurance@standardlife.ca</a></p>
-
-                            <h3>Toronto</h3>
-
-                            <p>100 Sheppard Avenue East, Suite 1158<br>
-                            Toronto, Ontario M2N 6N5<br>
-                            <br>
-                            <strong>Telephone</strong>: 416-224-3535 or 1-800-465-2581<br>
-                            <strong>Fax</strong>: 416-224-3433<br>
-                            <a href="mailto:ontariocanada.groupinsurance@standardlife.ca">ontariocanada.groupinsurance@standardlife.ca</a></p>
-
-                            <h3>Vancouver</h3>
-
-                            <p>The Standard Life Building<br>
-                            625 Howe Street, Suite 900<br>
-                            Vancouver, British Columbia V6C 2T6<br>
-                            <br>
-                            <strong>Telephone</strong>: 604-664-8030 or 1-800-663-1784<br>
-                            <strong>Fax</strong>: 604-664-8033<br>
-                            <a href="mailto:westerncanada.groupinsurance@standardlife.ca">westerncanada.groupinsurance@standardlife.ca</a></p>
-
-                            <h3>Winnipeg</h3>
-
-                            <p>155 Carlton Street, Suite 1640<br>
-                            Winnipeg, Manitoba R3C 3H8<br>
-                            <br>
-                            <strong>Telephone</strong>: 204-949-4241 or 1-800-663-7372<br>
-                            <strong>Fax</strong>: 204-956-2530<br>
-                            <a href="mailto:westerncanada.groupinsurance@standardlife.ca">westerncanada.groupinsurance@standardlife.ca</a></p>
-                            
-                            <h3>Principal office</h3>
-
-                            <p>Standard Life<br>
-                            Standard Life Assurance Company of Canada<br>
-                            1245 Sherbrooke Street West<br>
-                            Montréal, Québec H3G 1G3</p>
-
-                            <h3>Regional centres</h3>
-
-                            <p><strong>Eastern Region</strong><br>
-                            <a href="mailto:eastern@standardlife.ca">eastern@standardlife.ca</a></p>
-
-                            <p><strong>Central Region</strong><br>
-                            <a href="mailto:central@standardlife.ca">central@standardlife.ca</a></p>
-
-                            <p><strong>Western Region</strong><br>
-                            <a href="mailto:western@standardlife.ca">western@standardlife.ca</a></p>
-
-                            <p><strong>Toll-free number:</strong> 1-888-499-4995</p>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">Business Consultancy<span class="st-arrow">Open or Close</span></a>
-                        <div class="st-content">
-                            <h3>Principal office</h3>
-
-                            <p>Standard Life<br>
-                            Standard Life Assurance Company of Canada<br>
-                            1245 Sherbrooke Street West<br>
-                            Montréal, Québec H3G 1G3</p>
-
-                            <h3>Regional centres</h3>
-
-                            <p><strong>Eastern Region</strong><br>
-                            <a href="mailto:eastern@standardlife.ca">eastern@standardlife.ca</a></p>
-
-                            <p><strong>Central Region</strong><br>
-                            <a href="mailto:central@standardlife.ca">central@standardlife.ca</a></p>
-
-                            <p><strong>Western Region</strong><br>
+</body>
+</html>
+  <p><strong>Western Region</strong><br>
                             <a href="mailto:western@standardlife.ca">western@standardlife.ca</a></p>
 
                             <p><strong>Toll-free number:</strong> 1-888-499-4995</p>

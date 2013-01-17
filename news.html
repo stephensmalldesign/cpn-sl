@@ -1,92 +1,94 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" manifest="/wps/mobileTheme/WEB-INF/cache.mf">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"
-            content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+                content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<link rel="dynamic-content" href="res:/advisor-mobile/themes/html/mobileTheme/head.jsp">
-<!-- head node content spot -->
-<title>NEWS | FAKE VERSION</title>
-<!--  Foundation Framework  -->
-<link rel="stylesheet/less" href="less/normalize.less">
-<link rel="stylesheet/less" href="less/foundation.less">
-<link rel="stylesheet/less" href="less/app.less">
-<link href="//ajax.googleapis.com/ajax/libs/dojo/1.8.1/dojox/mobile/themes/iphone/iphone.css"
-            rel="stylesheet">
-</link>
+  <link rel="stylesheet/less" href="less/normalize.less">
+  <link rel="stylesheet/less" href="less/foundation.less">
+  <link rel="stylesheet/less" href="less/app.less">
 <style>
-body, html {
-	height:100%;
-}
+	html,body{
+		height: 100%;
+	}
+	#newslistvsw h1
+	{
+		padding:5px;
+		font-weight:bold;
+		color:#036;
+	}
+	#newslistvsw h2
+	{
+		font-size:14px;
+	}
+	#newslistvsw .panel
+	{
+		 background: none;
+		 border:none;
+		 margin:0;
+		 padding:0;
+		 
+	}
 </style>
+
 <script src="js/modernizr.foundation.js"></script>
-<script src="js/less-1.3.1.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.1/dojo/dojo.js"
-     data-dojo-config="async: false, parseOnLoad: true, mblThemeFiles: ['base','TabBar']"></script>
-<script type="text/javascript">
-			var lastId = 10;
-			require(["dojox/mobile","dojo/query", "dojo/dom-attr", "dojo/_base/connect", 
-			"dojo/_base/declare", "dojox/mobile/parser", "dojox/mobile/deviceTheme", "dojo/ready", "dijit/registry",
-			    "dojox/mobile/compat", "dojox/mobile/View", "dojox/mobile/ListItem","dojox/mobile/ProgressIndicator","dojox/mobile/Button",
-				"dojox/mobile/ToolBarButton", "dojox/mobile/FixedSplitter", "dojox/mobile/Container",
-				"dojox/mobile/ScrollableView", "dojox/mobile/SwapView", "dojox/mobile/TabBar",
-				], function(mobile,query,attr,connect,declare, parser, deviceTheme, ready, registry, compat, View, ListItem, ProgressIndicator){
-					ready(function(){
-						var sv = registry.byId('newslist');
-						sv.adjustDestination = function(to, pos){
-							var dim = this.getDim();
-							var ch = dim.c.h; 
-							var dh = dim.d.h; 
-							if(to.y < dh - ch){ 
-								var list = registry.byId("nsl1");
-								/*
-								for(i=0;i<5;i++)
-								{
-									lastId++;
-									var le = dojo.clone(list.children[0]);
-									attr.set(le.children[1], "id", "newsbatch"+lastId);
-									dojo.place(le, list);
-									var d = dojo.create('div');
-									dojo.place(d, le);
-									
-									parser.parse(le);
-								}
-								*/
-								for(var i = 1; i <= 3; i++){
-									
-									var item1 = new ListItem({
-										icon: "images/i-icon-1.png",
-										label: "News Item "+lastId,
-										variableHeight: true,
-										moveTo: "#newsdetailpage&Id="+lastId
-									});
-									list.addChild(item1);
-									lastId++;
-								}
-							}
-						}
-						});
-						function loadPage(moveTo){
-							if(!(moveTo.match(/#(\w+)/))){ return; }
-							moveTo.match(/#(\w+)(.*)/);
-							var id = RegExp.$1;
-							var param = RegExp.$2;
-							if(!param){ return; }
-							var container = dojo.byId(id);
-							container.innerHTML = "";
-							var prog = ProgressIndicator.getInstance();
-							container.appendChild(prog.domNode);
-							prog.start();
-							setTimeout(function(){ // network latency simulation
-								prog.stop();
-								container.innerHTML = '<h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props=\'back:"Back to All News", moveTo:"#newslist"\'>'+param+'</h1>\n'+param;
-								parser.parse(container);
-							}, 1000);
-						}
-						
-						dojox.mobile.ViewEx = declare(
-							"dojox.mobile.ViewEx",
+  <script src="js/less-1.3.1.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.1/dojo/dojo.js"
+         data-dojo-config="async: false, parseOnLoad: true, mblThemeFiles: ['base','PageIndicator', 'SimpleDialog', 'Button']"></script>
+         <script src="js/common.js"></script>
+         <script src="js/news.js"></script>
+</head>
+<body>
+<div id="main" data-dojo-type="dojox.mobile.View" style="display:none">
+  <nav class="main-nav" id="main-nav">
+    <a href="index.html" class="active slider">Home</a>
+    <a href="news.html" class="slide">All News</a>
+    <a href="mutual-landing.html" class="slide">Mutual Funds</a>
+    <a href="seg-landing.html" class="slide">Segregated funds</a>
+    <a href="#">Annuities Ideal Term Funds</a>
+    <a href="gsr-landing.html" class="slide">Group Savings and Retirement</a>
+    <a href="gi-landing.html" class="slide">Group Insurance</a>
+    <a href="price-performance.html" class="slide">Price &amp; Performance</a>
+    <a href="rates.html" class="slide">Rates</a>
+    <a href="my-gps.html" class="slide">My GPS</a>
+    <a href="contact.html" class="slide">Contact Us</a>
+  </nav>
+  <div class="page-wrap" >
+    <div id="theme-masthead" class="masthead main-header"> <a href="#main-nav" class="open-menu">☰</a> <a href="#" class="close-menu">☰</a>
+          <h1>Standard Life</h1>
+        </div>
+    <!-- end masthead -->
+    <div id="theme-page" class="row content">
+          <div id="newslistvv" data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
+        <div id="newslistvsw" class="content news" data-dojo-type="dojox.mobile.ScrollableView"  data-dojo-props='scrollBar:true, fadeScrollBar:true' style="position:relative">
+              <!-- add content -->
+              <h1>News</h1>
+              <ul id="newslistvl" data-dojo-type="dojox.mobile.EdgeToEdgeList">
+            <li id="loadingMore" data-dojo-type="dojox.mobile.ListItem"  data-dojo-props='icon:"images/i-icon-2.png",variableHeight:true'>Loading more... Please wait<br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                </li>
+          </ul>
+            </div>
+      </div>
+          <div id="newslisttemplate" style="display:none">
+          
+        <div class="panel">
+        <h2>Standard Life to introduce end-to-end...</h2>
+              <time>November 13, 2012</time>
+              <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
+            </div>
+      </div>
+        </div>
+  </div>
+</div>
+</body>
+</html>
+ewEx",
 							View,
 						{
 							onStartView: function(){
