@@ -492,7 +492,7 @@ z-index: 99;
 
     .news, #newslistvsw {
     	h1 {
-    		margin: 0px 10px 0px;
+    		margin: 0px 10px 5px;
     		text-transform: inherit;
     		font-size: 16px;
     		padding-left: 0px;
@@ -503,13 +503,17 @@ z-index: 99;
     	.mblDomButtonArrow, .mblImageIcon {
     		display: none;
     	}
+    	.mblListItemRightIcon {
+    		display: none;
+    	}
 
     }
 
-    .newslist {
+    .newslist, .mblEdgeToEdgeList {
     	margin: 5px 10px;
     	.rounded(4px);
     	.box-shadow(0px 0px 2px @shadow);
+    	background: @blank;
     	.mblListItemSelected {
     		background: gold;
     	}
@@ -521,8 +525,10 @@ z-index: 99;
     	}
 
     	.panel {
-    		
-
+    		padding: 10px;
+    		margin: 0;
+    		border: none;
+    		background: transparent;
     	}
     	h2, h3 {
     		font-size: 14px;
