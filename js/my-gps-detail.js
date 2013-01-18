@@ -37,12 +37,12 @@
 							var headerRT = new dojox.mobile.RoundRectCategory({
 																		id:'rtc'+mygpsid,
 																		});
-							headerRT.containerNode.innerHTML = '<h2>Related Topics</h2>';
+							headerRT.containerNode.innerHTML = 'Related Topics';
 							var listRT = new dojox.mobile.RoundRectList({
 																		id:'rt'+mygpsid,
 																		});
 							for(var i = 1; i <= 3; i++){
-									var content = '<img src="images/my-gps-list-item-icon.png" style="float:left; margin-right:10px"/><h2>A Snapshot of GS&amp;Market...</h2><time>December 11, 2012</time>';
+									var content = '<img src="images/my-gps-list-item-icon.png" class="listimage"/><div class="panel"><h2>A Snapshot of GS&amp;Market...</h2><time>December 11, 2012</time></div>';
                                         var item1 = new ListItem({
                                             icon: "images/i-icon-1.png",
 											label: content,

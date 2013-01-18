@@ -27,6 +27,8 @@
 :: Slider
 :: Forms
 :: News
+:: My GPS
+:: Contact Us
 */
 
 
@@ -550,6 +552,76 @@ z-index: 99;
 
     	}
     }
+
+    /* -----------------------------------------
+       MY GPS
+    ----------------------------------------- */
+    #mygps, #mygpslist {
+    	h2, h3 {
+    		font-size: 14px;
+    		margin-bottom: 5px;
+    		margin-top: 3px;
+    		font-weight: normal;
+    		color: @link;
+    	}
+    	h2.mblRoundRectCategory {
+    		margin: 0;
+    	}
+    	
+    	p {
+    		font-size: 11px;
+    		color: #666;
+    		&.truncated {
+    			&:after {
+    				content: "...";
+    			}
+    		}
+    	}
+    	time {
+    		font-size: 11px;
+    		color: #666;
+    		margin-bottom: 10px;
+    		display: block;
+    		font-weight: bold;
+    	}
+	    .mblScrollableViewContainer {
+	    	padding: 10px;
+	    	.mblRoundRectList, .mblRoundRect {
+	    		border: none;
+	    		.rounded(4px);
+	    		margin-left: 0;
+	    		margin-right: 0;
+	    		.box-shadow(0px 0px 2px @shadow);
+	    	}
+	    	.mblRoundRect {
+	    		padding: 0;
+	    		img {.border-radius(4px, 0px, 0px, 4px);}
+	    		.gpscontent {
+	    			padding: 10px;
+	    		}
+	    	}
+	    	.mblRoundRectList {
+	    		.mblListItem {
+		    		border-bottom: 1px solid #e1e1e1;
+		    		&.mblVariableHeight {
+		    			padding: 0;
+		    		}
+		    		.panel {
+		    			margin: 0;
+		    			background: transparent;
+		    			border: none;
+		    			padding: 10px;
+		    		}
+		    		.listimage {
+		    			float: left;
+		    			margin: 10px;
+		    		}
+	    		}
+	    	}
+	    }
+    }
+    
+
 
     /* -----------------------------------------
        CONTACT

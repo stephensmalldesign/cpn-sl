@@ -51,7 +51,7 @@
     <a href="my-gps.html" class="slide active">My GPS</a>
     <a href="contact.html" class="slide">Contact Us</a>
   </nav>
-  <div class="page-wrap" >
+  <div class="page-wrap" id="mygps" >
     <div id="theme-masthead" class="masthead main-header"> <a href="#main-nav" class="open-menu">☰</a> <a href="#" class="close-menu">☰</a>
           <h1 class="logo">Standard Life</h1>
         </div>
@@ -61,11 +61,16 @@
         <div id="mygpslistvsw" class="content mygps" data-dojo-type="dojox.mobile.ScrollableView"  data-dojo-props='scrollBar:true, fadeScrollBar:true' style="position:relative">
               <!-- add content -->
 
-              <h1 data-dojo-type="dojox.mobile.RoundRectCategory">My Business GPS</h1>
-                <div data-dojo-type="dojox.mobile.RoundRect" data-dojo-props='shadow:true'>
-                    <img src="images/my-gps-header.png"/>
+              <!-- <h1 data-dojo-type="dojox.mobile.RoundRectCategory">My Business GPS</h1> -->
+                <div data-dojo-type="dojox.mobile.RoundRect" data-dojo-props=''>
+                    <img src="images/mygps1.png"/>
+                    <div class="gpscontent">
+                      <h2>Growing your business by doing group</h2>
+                      <time>December 14th 2012</time>
+                      <p>Small and medium-sized enterprises without a group savings and retirement plan can offer an attractive opportunity.</p>
+                    </div>
                 </div>
-              <br/>
+                <h3>Related Articles</h3>
               <ul id="mygpslistvl" ul data-dojo-type="dojox.mobile.RoundRectList">
             	<li id="loadingMore" data-dojo-type="dojox.mobile.ListItem"  data-dojo-props='icon:"images/i-icon-loading.png",variableHeight:true'>Loading more... Please wait<br/>
                   <br/>
@@ -78,7 +83,7 @@
             </div>
       </div>
          <div id="mygpslisttemplate" style="display:none">              
-         	<img src="images/my-gps-list-item-icon.png" style="float:left; margin-right:10px"/>
+         	<img src="images/my-gps-list-item-icon.png" class="listimage"/>
             <div class="panel">
             	<h2>A Snapshot of GS&amp;Market...</h2>
                   <time>December 11, 2012</time>
