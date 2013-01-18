@@ -1,42 +1,42 @@
-var lastNewsId = 0;
+var lastmypgpsId = 0;
                 require(
 						[
 						 "dojo/ready"
 						 ,"dijit/registry"
 						 ,"dojox/mobile/ListItem"
-						 ,"dojox/mobile/EdgeToEdgeList"
+						 ,"dojox/mobile/RoundRectList"
 						 
                     ], function(ready, registry, ListItem){
                         ready(function(){
-							LoadMoreNews();
-                            var newslistvsw = registry.byId('newslistvsw');
-                            newslistvsw.adjustDestination = function(to, pos){
+							LoadMoremygps();
+                            var mygpslistvsw = registry.byId('mygpslistvsw');
+                            mygpslistvsw.adjustDestination = function(to, pos){
                                 var dim = this.getDim();
                                 var ch = dim.c.h; 
                                 var dh = dim.d.h; 
                                 if(to.y < dh - ch + 100){ 
-                                    LoadMoreNews();
+                                    LoadMoremygps();
                                 }
                             }
 							
                          });
-						function LoadMoreNews(){
-							var list = registry.byId("newslistvl");
+						function LoadMoremygps(){
+							var list = registry.byId("mygpslistvl");
 							var loadingMore = registry.byId("loadingMore");
-							var content = dojo.byId('newslisttemplate').innerHTML;
+							var content = dojo.byId('mygpslisttemplate').innerHTML;
 							
 							list.removeChild(loadingMore);
                                     for(var i = 1; i <= 10; i++){
 
                                         var item1 = new ListItem({
                                             icon: "images/i-icon-1.png",
-                                            //label: 'NEWS VIEW' + lastNewsId + '<br/>' + content,
+                                            //label: 'mygps VIEW' + lastmypgpsId + '<br/>' + content,
 											label: content,
 											variableHeight: true,
-											href:"news-detail.html?id="+lastNewsId,
+											href:"my-gps-detail.html?id="+lastmypgpsId,
                                         });
                                         list.addChild(item1);
-                                        lastNewsId++;
+                                        lastmypgpsId++;
                                     }
 									list.addChild(loadingMore);
 							}
