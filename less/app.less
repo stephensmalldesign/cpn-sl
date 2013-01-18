@@ -15,6 +15,7 @@
 @body: rgb(245,245,248);
 @link: rgb(15,31,112);
 @btnnav: rgb(255,138,0);
+@shadow: rgba(6,76,114,.15);
 
 /* -------------------------------------------------- 
    Table of Contents
@@ -124,36 +125,7 @@ body {
 		color: @link;
 	}
 	
-	.panel {
-		/*
-		background: #fff;
-		padding: 10px;
-		.rounded(3px);
-		.drop-shadow;
-		*/
-		h3 { 
-			margin: 0; 
-			font-weight:bold;
-			color:#036;
-			font-size:large;
-			}
-		p {
-			font-size: 11px;
-			color: #666;
-			&.truncated {
-				&:after {
-					content: " [...]";
-				}
-			}
-		}
-		time {
-			font-size: 11px;
-			color: #666;
-			margin-bottom: 10px;
-			display: block;
-		}
-
-	}
+	
 
 
 /* -----------------------------------------
@@ -379,69 +351,6 @@ z-index: 99;
 	}
 
 
-
-
-
-	/* -----------------------------------------
-	   Accordion
-	----------------------------------------- */
-	/* Flexible Slide-to-top Accordion Style*/
-
-	.st-accordion {
-	    margin: 0 auto;
-	    min-width:270px;
-	    width:98%;
-	    ul li {
-	        border-bottom: 1px dashed @medium;
-	        height: auto;
-	        margin-top: 20px;
-	        padding-bottom: 20px;
-	        overflow: hidden;
-	        &:first-child {
-	        	border-top:none;
-	        }
-	        &.st-open > a {
-			    span { 
-				    .rotation(180deg);
-				}
-			}
-	    }
-	    ul li > a {
-    	    display: block;
-    		outline:none;
-    		position: relative; 	
-    		padding: 0 50px 0 0; 
-    		span{
-				background: url(http://www.techandmath.gr/img/icons/small_down_arrow.gif) no-repeat;
-				height: 14px;
-				margin-top: -7px;
-				position: absolute;
-				right: 10px;
-				text-indent:-9000px;
-				top: 16px;
-				width: 26px;
-				.transition(.5s);
-				ul li ul li {
-							border-bottom: none;
-	       					border-top:none;
-	        				height: auto;
-				}
-			}
-    	}
-	}
-	.st-content{
-	    padding: 10px 10px 30px 10px;
-	    position: relative;
-	    p {
-    	    padding: 0px 0px 15px; 
-    	}
-    	ul li {
-	        border-bottom: none;
-	        border-top:none;
-	        height: auto;
-	    }
-	}
-
 	/* -----------------------------------------
 	   Slider
 	----------------------------------------- */
@@ -558,18 +467,65 @@ z-index: 99;
        NEWS
     ----------------------------------------- */
 
-    .news {
+    .news, #newslistvsw {
     	h1 {
-    		margin-bottom: 0px;
+    		margin: 0px 10px 0px;
+    		text-transform: inherit;
+    		font-size: 16px;
+    		padding: 0px;
     	}
     	h2 {
     		margin-top: 3px;
+    		font-weight: normal;
+    		color: @link;
     	}
     	h3 {
     		margin-bottom: 0px;
     	}
+    	.mblDomButtonArrow, .mblImageIcon {
+    		display: none;
+    	}
+
     }
 
+    .newslist {
+    	margin: 5px 10px;
+    	.rounded(4px);
+    	.box-shadow(0px 0px 2px @shadow);
+    	.mblListItemSelected {
+    		background: gold;
+    	}
+    	li {
+    		border-bottom: 1px solid #e1e1e1;
+    	}
+    	.panel {
+    		h2 {
+    			margin-bottom: 5px;
+    		}
+    		h3 { 
+    			margin: 0; 
+    			font-weight:bold;
+    			color:#036;
+    			font-size:large;
+    			}
+    		p {
+    			font-size: 11px;
+    			color: #666;
+    			&.truncated {
+    				&:after {
+    					content: "...";
+    				}
+    			}
+    		}
+    		time {
+    			font-size: 11px;
+    			color: #666;
+    			margin-bottom: 10px;
+    			display: block;
+    		}
+
+    	}
+    }
 
 
 
