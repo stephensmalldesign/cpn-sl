@@ -61,8 +61,8 @@
 <body>
 <div id="main" data-dojo-type="dojox.mobile.View" style="display:none">
   <nav class="main-nav" id="main-nav">
-    <a href="index.html" class="active slider">Home</a>
-    <a href="news.html" class="slide">All News</a>
+    <a href="index.html" class="slider home">Home</a>
+    <a href="news.html" class="slide active">All News</a>
     <a href="mutual-landing.html" class="slide">Mutual Funds</a>
     <a href="seg-landing.html" class="slide">Segregated funds</a>
     <a href="#">Annuities Ideal Term Funds</a>
@@ -75,7 +75,7 @@
   </nav>
   <div class="page-wrap" >
     <div id="theme-masthead" class="masthead main-header"> <a href="#main-nav" class="open-menu">☰</a> <a href="#" class="close-menu">☰</a>
-          <h1>Standard Life</h1>
+          <h1 class="logo">Standard Life</h1>
         </div>
     <!-- end masthead -->
     <div id="theme-page" class="row content">
@@ -83,7 +83,7 @@
         <div id="newslistvsw" class="content news" data-dojo-type="dojox.mobile.ScrollableView"  data-dojo-props='scrollBar:true, fadeScrollBar:true' style="position:relative">
               <!-- add content -->
               <h1>News</h1>
-              <ul id="newslistvl" data-dojo-type="dojox.mobile.EdgeToEdgeList">
+              <ul id="newslistvl" class="newslist" data-dojo-type="dojox.mobile.EdgeToEdgeList">
             <li id="loadingMore" data-dojo-type="dojox.mobile.ListItem"  data-dojo-props='icon:"images/i-icon-2.png",variableHeight:true'>Loading more... Please wait<br/>
                   <br/>
                   <br/>
