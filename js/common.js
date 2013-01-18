@@ -7,9 +7,7 @@ require(["dojox/mobile"
 		 , "dijit/registry"
 		 , "dojox/mobile/compat"
 		 , "dojox/mobile/View"
-		 , "dojox/mobile/ViewController"
-		 , "dojox/mobile/Button"
-         , "dojox/mobile/SimpleDialog",
+		 , "dojox/mobile/ViewController"		 
                     ], function(mobile,query,attr, parser, deviceTheme, ready, registry, compat, View, ViewController){
                         ready(function(){
 							
