@@ -596,6 +596,7 @@ z-index: 99;
 	    	.mblRoundRect {
 	    		padding: 0;
 	    		img {.border-radius(4px, 0px, 0px, 4px);}
+	    		background: @blank;
 	    		.gpscontent {
 	    			padding: 10px;
 	    		}
@@ -603,11 +604,14 @@ z-index: 99;
 	    	.mblRoundRectList {
 	    		.mblListItem {
 		    		border-bottom: 1px solid #e1e1e1;
+		    		background: @blank;
 		    		&.mblVariableHeight {
 		    			padding: 0;
 		    		}
+		    		.mblListItemRightIcon {
+		    			display: none;
+		    		}
 		    		.panel {
-		    			margin: 0;
 		    			background: transparent;
 		    			border: none;
 		    			padding: 10px;
