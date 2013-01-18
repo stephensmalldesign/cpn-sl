@@ -2,13 +2,12 @@ require(["dojox/mobile"
 		 , "dojo/query"
 		 , "dojo/dom-attr"
 		 , "dojox/mobile/parser"
-		 , "dojox/mobile/deviceTheme"
 		 , "dojo/ready"
 		 , "dijit/registry"
 		 , "dojox/mobile/compat"
 		 , "dojox/mobile/View"
 		 , "dojox/mobile/ViewController"		 
-                    ], function(mobile,query,attr, parser, deviceTheme, ready, registry, compat, View, ViewController){
+                    ], function(mobile,query,attr, parser, ready, registry, compat, View, ViewController){
                         ready(function(){
 							
                            show = function(dlg){
