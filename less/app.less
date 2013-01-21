@@ -45,7 +45,7 @@ body {
 			&.logo {
 				background: url(../images/logo.png) no-repeat;
 				background-size: 100%;
-				text-indent: -999em;
+				text-indent: -9999em;
 				padding:0;
 				position: relative;
 				top: 5px;
@@ -149,24 +149,6 @@ body {
 	}
 	
 	
-
-
-/* -----------------------------------------
-	   Icons
-	----------------------------------------- */
-	li [class^="icon-"], li [class*=" icon-"] {
-	    width: auto;
-	}
-	.button {
-		li [class^="icon-"], li [class*=" icon-"] {
-	    margin-bottom: -2px;
-		}
-	}
-	.icon-huge {
-		font-size: 45px;
-	}
-
-
 
 /* -----------------------------------------
 	   Off-Canvas Nav
@@ -278,6 +260,12 @@ z-index: 99;
 		&.rates {
 			&:after {
 				background: url(../images/icons/rates.png) no-repeat;
+				background-size: 50%;
+			}
+		}
+		&.price {
+			&:after {
+				background: url(../images/icons/price.png) no-repeat;
 				background-size: 50%;
 			}
 		}
@@ -401,6 +389,13 @@ z-index: 99;
 						}
 						&.rates {
 							background: url(../images/icons/rates.png) no-repeat;
+							background-size: 50%;
+							width: 64px;
+							height: 64px;
+							display: block;
+						}
+						&.price {
+							background: url(../images/icons/price.png) no-repeat;
 							background-size: 50%;
 							width: 64px;
 							height: 64px;
