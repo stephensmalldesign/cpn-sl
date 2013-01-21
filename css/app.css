@@ -1045,9 +1045,10 @@ body .content {
   width: 100%;
   margin-left: 0%;
   padding: 60px 0px 0 ;
-  /*.transition(.3s);
-	overflow: hidden;*/
-
+  -webkit-transition: 0.3s 0.2s ease-out;
+  -moz-transition: 0.3s 0.2s ease-out;
+  transition: 0.3s 0.2s ease-out;
+  overflow: hidden;
 }
 body #theme-masthead .close-menu {
   display: none;
