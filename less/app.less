@@ -52,7 +52,7 @@ body {
 			&.logo {
 				background: url(../images/logo.png) no-repeat;
 				background-size: 100%;
-				text-indent: -999em;
+				text-indent: -9999em;
 				padding:0;
 				position: relative;
 				top: 5px;
@@ -162,6 +162,7 @@ body {
 	
 	
 
+<<<<<<< HEAD
 
 /* -----------------------------------------
 	   Icons
@@ -179,6 +180,8 @@ body {
 	}
 
 
+=======
+>>>>>>> e4b90326aa086900bba0b0bab51640662522e694
 /* -----------------------------------------
 	   Main Header
 	----------------------------------------- */
@@ -235,6 +238,8 @@ body { -webkit-animation: bugfix infinite 1s; }
 	background: rgb(3,21,58);
 	overflow: hidden;
 	.transition(.3s);
+	 -webkit-user-select: none; 
+	 -webkit-transform: translate3d(0px, 0px, 0px); 
 	}
 .main-nav a {
 	display: block ;
@@ -296,6 +301,12 @@ body { -webkit-animation: bugfix infinite 1s; }
 		&.rates {
 			&:after {
 				background: url(../images/icons/rates.png) no-repeat;
+				background-size: 50%;
+			}
+		}
+		&.price {
+			&:after {
+				background: url(../images/icons/price.png) no-repeat;
 				background-size: 50%;
 			}
 		}
@@ -461,91 +472,79 @@ body { -webkit-animation: bugfix infinite 1s; }
 
 	.buttonnav {
 		text-align: center;
-			.row {
-				padding: 10px 20px 0;
-				.slide {
-					.box-sizing;
-					display: block;
-					float: left;
-					.panel {
-						&.callout {
-							border-radius: 50%;
-							width: 74px;
-							height: 74px;
-							background: @btnnav;
-							border: none;
-							margin: 0 auto 5px;
-						}
-					}
-					p {
-						font-size: 11px;
-						font-weight: bold;
-						max-width: 75px;
-						margin: 0 auto 10px;
-					}
-					.icon {
-						top: 1px;
-						left: 1px;
-						position: relative;
-						&.ghost-white {
-							background: url(../images/icons/ghost.png) no-repeat;
-							background-size: 50%;
-							width: 64px;
-							height: 64px;
-							display: block;
-						}
-						&.product {
-							background: url(../images/icons/product.png) no-repeat;
-							background-size: 50%;
-							width: 64px;
-							height: 64px;
-							display: block;
-						}
-						&.gps {
-							background: url(../images/icons/gps.png) no-repeat;
-							background-size: 50%;
-							width: 64px;
-							height: 64px;
-							display: block;
-						}
-						&.rates {
-							background: url(../images/icons/rates.png) no-repeat;
-							background-size: 50%;
-							width: 64px;
-							height: 64px;
-							display: block;
-						}
-						&.news {
-							background: url(../images/icons/news.png) no-repeat;
-							background-size: 50%;
-							width: 64px;
-							height: 64px;
-							display: block;
-						}
-						&.contact {
-							background: url(../images/icons/contact.png) no-repeat;
-							background-size: 50%;
-							width: 64px;
-							height: 64px;
-							display: block;
-						}
+		margin: 10px 0;
+			.slide {
+				display: inline-block;
+				vertical-align: top;
+				margin: 0 10px 0 10px;
+				.panel {
+					&.callout {
+						border-radius: 50%;
+						width: 74px;
+						height: 74px;
+						background: @btnnav;
+						border: none;
+						margin: 10px 0px 5px 0px;
 					}
 				}
-				&.threecolumns {
-					.slide {
-						width: 33%;
-					}
+				p {
+					font-size: 11px;
+					font-weight: bold;
+					max-width: 75px;
+					margin: 0 auto 10px;
 				}
-				&.twocolumns {
-					float: none;
-					.slide {
-						width: 50%;
-						&:first-child {
-							padding-left: 15%;
-						}
-						&:last-child {
-							padding-right: 15%;
-						}
+				.icon {
+					top: 1px;
+					left: 1px;
+					position: relative;
+					&.ghost-white {
+						background: url(../images/icons/ghost.png) no-repeat;
+						background-size: 50%;
+						width: 64px;
+						height: 64px;
+						display: block;
+					}
+					&.product {
+						background: url(../images/icons/product.png) no-repeat;
+						background-size: 50%;
+						width: 64px;
+						height: 64px;
+						display: block;
+					}
+					&.gps {
+						background: url(../images/icons/gps.png) no-repeat;
+						background-size: 50%;
+						width: 64px;
+						height: 64px;
+						display: block;
+					}
+					&.rates {
+						background: url(../images/icons/rates.png) no-repeat;
+						background-size: 50%;
+						width: 64px;
+						height: 64px;
+						display: block;
+					}
+					&.price {
+						background: url(../images/icons/price.png) no-repeat;
+						background-size: 50%;
+						width: 64px;
+						height: 64px;
+						display: block;
+					}
+					&.news {
+						background: url(../images/icons/news.png) no-repeat;
+						background-size: 50%;
+						width: 64px;
+						height: 64px;
+						display: block;
+					}
+					&.contact {
+						background: url(../images/icons/contact.png) no-repeat;
+						background-size: 50%;
+						width: 64px;
+						height: 64px;
+						display: block;
 					}
 				}
 			}
