@@ -16,25 +16,32 @@ require(["dojox/mobile"
 							hide = function(dlg){
 								registry.byId(dlg).hide();
 							} 
-							
+							slideTo = function(href)
+							{
+								registry.byId('main').performTransition(null, 1, "slide", null, function(){ 
+																																	 location.href = href;
+																																	 });
+							}
+							sliderTo = function(href)
+							{
+								registry.byId('main').performTransition(null, -1, "slide", null, function(){ 
+																																	 location.href = href;
+																																	 });
+							}
 							query(".slide").connect("onclick", function(e){
 								dojo.stopEvent(e);
 								var link = this;
-								registry.byId('main').performTransition(null, 1, "slide", null, function(){ 
-																										 location.href = attr.get(link,'href');
-																										 });
+								slideTo(attr.get(link,'href'));
 							});
 							query(".slider").connect("onclick", function(e){
 								dojo.stopEvent(e);
 								var link = this;
-								registry.byId('main').performTransition(null, -1, "slide", null, function(){ 
-																										 location.href = attr.get(link,'href');
-																										 });
+								sliderTo(attr.get(link,'href'));
 							});
+							
                          });
 						
                     });
-
 
 
 function getUrlParams() {
