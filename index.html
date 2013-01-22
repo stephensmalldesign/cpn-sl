@@ -121,6 +121,18 @@
                 </div>
               </nav>
             </div>
+            <div data-dojo-type="dojox.mobile.Container" class="footer">
+           		<table width="100%">
+                	<tr>
+                    	<td>
+                        	<a href="#" onClick="show('dlg_confirm_nomobile')">Desktop Website</a>
+                        </td>
+                        <td>
+	                        <a href="#">Legal Information</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <div id="dlg_confirm_nomobile" data-dojo-type="dojox.mobile.SimpleDialog">
               
               <div class="mblSimpleDialogTitle">This links to a page without a mobile layout.</div>
@@ -129,20 +141,9 @@
                 <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton" onClick="hide('dlg_confirm_nomobile')">No</button>
                 <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton mblBlueButton" onClick="hide('dlg_confirm_nomobile')">Yes</button>
               </div>
+              
             </div>
         </div><!-- theme-page -->
-        <div data-dojo-type="dojox.mobile.Container" class="footer">
-              <table width="100%">
-                  <tr>
-                      <td>
-                          <a href="#" onClick="show('dlg_confirm_nomobile')">Desktop Website</a>
-                        </td>
-                        <td>
-                          <a href="#">Legal Information</a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
       </div><!-- page-wrap -->
     </div><!-- c-list -->
 	</div><!-- home -->

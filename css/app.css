@@ -736,11 +736,8 @@ ul.icons li .icon-large:before {
 -----------------------------------------------------
 :: Shared Styles
 :: Icons
-:: Main Header
 :: Off-Canvas Nav
-:: Footer
-:: Dialog Pop-up
-:: Button Nav
+:: Accordion
 :: Slider
 :: Forms
 :: News
@@ -750,23 +747,11 @@ ul.icons li .icon-large:before {
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
-html,
 body {
   height: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-body {
   background: url(../images/pattern-home.jpg) repeat #f5f5f8;
-  margin: 0;
-  padding: 0;
   /* -----------------------------------------
 	   Icons
-	----------------------------------------- */
-
-  /* -----------------------------------------
-	   Main Header
 	----------------------------------------- */
 
   /* -----------------------------------------
@@ -774,14 +759,6 @@ body {
 	----------------------------------------- */
 
   /* Advanced Checkbox Hack */
-
-  /* -----------------------------------------
-       FOOTER
-    ----------------------------------------- */
-
-  /* -----------------------------------------
-       Dialog Pop-up
-    ----------------------------------------- */
 
   /* -----------------------------------------
 	   Button Navigation
@@ -807,7 +784,9 @@ body {
        CONTACT
     ----------------------------------------- */
 
-  /* Contact Details */
+  /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
 
   /* Close body */
 
@@ -877,15 +856,6 @@ body .masthead a.back:before {
   top: 14px;
   left: 12px;
 }
-body .content {
-  width: 100%;
-  margin-left: 0%;
-  padding: 60px 0px 0 ;
-  -webkit-transition: 0.3s 0.2s ease-out;
-  -moz-transition: 0.3s 0.2s ease-out;
-  transition: 0.3s 0.2s ease-out;
-  overflow: hidden;
-}
 body .content ul,
 body .content ol,
 body .content dl {
@@ -932,6 +902,17 @@ body .button li [class*=" icon-"] {
 body .icon-huge {
   font-size: 45px;
 }
+body body {
+  -webkit-animation: bugfix infinite 1s;
+}
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}
 body .main-header {
   background: #0c2f73 url(../images/bkg-header-triangles.png) no-repeat right center;
   background-size: 60%;
@@ -962,22 +943,9 @@ body .main-header a {
 body .page-wrap {
   float: right;
   width: 100%;
-  height: 100%;
-  margin-bottom: -50px;
   -webkit-transition: 0.3s 0.2s ease-out;
   -moz-transition: 0.3s 0.2s ease-out;
   transition: 0.3s 0.2s ease-out;
-}
-body body {
-  -webkit-animation: bugfix infinite 1s;
-}
-@-webkit-keyframes bugfix {
-  from {
-    padding: 0;
-  }
-  to {
-    padding: 0;
-  }
 }
 body .main-nav {
   position: fixed;
@@ -1073,6 +1041,15 @@ body .main-nav a:hover,
 body .main-nav a:focus {
   background: #031a48;
 }
+body .content {
+  width: 100%;
+  margin-left: 0%;
+  padding: 60px 0px 0 ;
+  -webkit-transition: 0.3s 0.2s ease-out;
+  -moz-transition: 0.3s 0.2s ease-out;
+  transition: 0.3s 0.2s ease-out;
+  overflow: hidden;
+}
 body #theme-masthead .close-menu {
   display: none;
 }
@@ -1095,140 +1072,6 @@ body #main-nav:target + .page-wrap .main-header {
 body #main-nav:target + .page-wrap .content {
   float: left;
   margin-left: 80%;
-}
-body .footer {
-  width: 100%;
-  height: 50px;
-  position: relative;
-}
-body .footer td {
-  text-align: center;
-}
-body .footer a {
-  font-size: 11px;
-  text-decoration: underline;
-  text-align: center;
-  color: #007bc3;
-}
-body .clearfooter {
-  height: 50px;
-  clear: both;
-}
-body .dj_gecko body .mblSimpleDialog,
-body .dj_chrome body .mblSimpleDialog,
-body html body .mblSimpleDialog {
-  padding: 0px;
-}
-body .dj_gecko body .mblSimpleDialogDecoration,
-body .dj_chrome body .mblSimpleDialogDecoration,
-body html body .mblSimpleDialogDecoration {
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  background-color: #063175;
-  background-image: none;
-  border: 1px solid #0b5ddf;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-body .dj_gecko body .mblSimpleDialogDecoration:before,
-body .dj_chrome body .mblSimpleDialogDecoration:before,
-body html body .mblSimpleDialogDecoration:before {
-  content: '';
-  height: 52px;
-  width: 52px;
-  position: absolute;
-  top: -25px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  background-color: #063175;
-  border: 1px solid #0b5ddf;
-  display: block;
-  left: 50%;
-  margin-left: -25px;
-  clip: rect(0px, 62px, 25px, 0px);
-}
-body .dj_gecko body .mblSimpleDialogDecoration:after,
-body .dj_chrome body .mblSimpleDialogDecoration:after,
-body html body .mblSimpleDialogDecoration:after {
-  content: '';
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  background: url(../images/icons/exclamation-mark.png) no-repeat;
-  background-size: 75%;
-  height: 40px;
-  width: 40px;
-  margin-left: -14px;
-}
-body .dj_gecko body .mblSimpleDialogDecoration .mblSimpleDialogContainer,
-body .dj_chrome body .mblSimpleDialogDecoration .mblSimpleDialogContainer,
-body html body .mblSimpleDialogDecoration .mblSimpleDialogContainer {
-  padding: 10px 0 0;
-}
-body .dj_gecko body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogTitle,
-body .dj_chrome body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogTitle,
-body html body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogTitle {
-  text-align: left;
-  padding: 5px 10px;
-  line-height: 1.4em;
-  font-size: 16px;
-}
-body .dj_gecko body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogText,
-body .dj_chrome body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogText,
-body html body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogText {
-  text-align: left;
-  padding: 5px 10px;
-  color: gold;
-}
-body .dj_gecko body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons,
-body .dj_chrome body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons,
-body html body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons {
-  background: #ffffff;
-  padding: 5px;
-  -webkit-border-top-right-radius: 0px;
-  -webkit-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-top-left-radius: 0px;
-  -moz-border-radius-topright: 0px;
-  -moz-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-topleft: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 0px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-body .dj_gecko body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons button,
-body .dj_chrome body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons button,
-body html body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons button {
-  width: 49%;
-  border-radius: 8px;
-  color: #ffffff;
-  font-size: 16px;
-  background: #0000ff;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0054a4), color-stop(1, #007bc3));
-  background: -ms-linear-gradient(bottom, #0054a4, #007bc3);
-  background: -moz-linear-gradient(center bottom, #0054a4 0%, #007bc3 100%);
-  -webkit-box-shadow: 0px 2px 6px rgba(6, 76, 114, 0.2);
-  -moz-box-shadow: 0px 2px 6px rgba(6, 76, 114, 0.2);
-  box-shadow: 0px 2px 6px rgba(6, 76, 114, 0.2);
-  height: 37px;
-  border: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 body .buttonnav {
   text-align: center;
@@ -1659,6 +1502,132 @@ body .mblDomButtonArrow {
   background: url(../images/icons/drill.png) no-repeat 50%;
   background-size: 30%;
 }
-body #theme-page2 .mblScrollableViewContainer h3 {
-  color: red;
+body .footer {
+  position: relative;
+  bottom: 0px;
+}
+body .footer td {
+  text-align: center;
+}
+body .footer a {
+  font-size: 11px;
+  text-decoration: underline;
+  text-align: center;
+  color: #007bc3;
+}
+.dj_gecko body .mblSimpleDialog,
+.dj_chrome body .mblSimpleDialog,
+html body .mblSimpleDialog {
+  padding: 0px;
+}
+.dj_gecko body .mblSimpleDialogDecoration,
+.dj_chrome body .mblSimpleDialogDecoration,
+html body .mblSimpleDialogDecoration {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #063175;
+  background-image: none;
+  border: 1px solid #0b5ddf;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.dj_gecko body .mblSimpleDialogDecoration:before,
+.dj_chrome body .mblSimpleDialogDecoration:before,
+html body .mblSimpleDialogDecoration:before {
+  content: '';
+  height: 52px;
+  width: 52px;
+  position: absolute;
+  top: -25px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #063175;
+  border: 1px solid #0b5ddf;
+  display: block;
+  left: 50%;
+  margin-left: -25px;
+  clip: rect(0px, 62px, 25px, 0px);
+}
+.dj_gecko body .mblSimpleDialogDecoration:after,
+.dj_chrome body .mblSimpleDialogDecoration:after,
+html body .mblSimpleDialogDecoration:after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  background: url(../images/icons/exclamation-mark.png) no-repeat;
+  background-size: 75%;
+  height: 40px;
+  width: 40px;
+  margin-left: -14px;
+}
+.dj_gecko body .mblSimpleDialogDecoration .mblSimpleDialogContainer,
+.dj_chrome body .mblSimpleDialogDecoration .mblSimpleDialogContainer,
+html body .mblSimpleDialogDecoration .mblSimpleDialogContainer {
+  padding: 10px 0 0;
+}
+.dj_gecko body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogTitle,
+.dj_chrome body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogTitle,
+html body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogTitle {
+  text-align: left;
+  padding: 5px 10px;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+.dj_gecko body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogText,
+.dj_chrome body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogText,
+html body .mblSimpleDialogDecoration .mblSimpleDialogContainer .mblSimpleDialogText {
+  text-align: left;
+  padding: 5px 10px;
+  color: gold;
+}
+.dj_gecko body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons,
+.dj_chrome body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons,
+html body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons {
+  background: #ffffff;
+  padding: 5px;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.dj_gecko body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons button,
+.dj_chrome body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons button,
+html body .mblSimpleDialogDecoration .mblSimpleDialogContainer .buttons button {
+  width: 49%;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  background: #0000ff;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0054a4), color-stop(1, #007bc3));
+  background: -ms-linear-gradient(bottom, #0054a4, #007bc3);
+  background: -moz-linear-gradient(center bottom, #0054a4 0%, #007bc3 100%);
+  -webkit-box-shadow: 0px 2px 6px rgba(6, 76, 114, 0.2);
+  -moz-box-shadow: 0px 2px 6px rgba(6, 76, 114, 0.2);
+  box-shadow: 0px 2px 6px rgba(6, 76, 114, 0.2);
+  height: 37px;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
