@@ -17,8 +17,6 @@
 @btnnav: rgb(255,138,0);
 @shadow: rgba(6,76,114,.15);
 
-@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
-
 /* -------------------------------------------------- 
    Table of Contents
 -----------------------------------------------------
@@ -38,87 +36,86 @@
    Shared Styles
 ----------------------------------------- */
 
-/* Advanced Checkbox Hack */
-
-
 body {
-	background: url(../images/pattern-home.jpg) repeat @body;
 	height: 100%;
-	.animation(bugfix infinite 1s);
+	background: url(../images/pattern-home.jpg) repeat @body;
+	//padding-top: 45px;
 	.masthead {
 		h1 {
 			&.logo {
 				background: url(../images/logo.png) no-repeat;
 				background-size: 100%;
-				height: 35px;
-				margin: 0 auto;
+				text-indent: -9999em;
 				padding:0;
 				position: relative;
-				text-indent: -9999em;
 				top: 5px;
+				margin: 0 auto;
 				width: 160px;
+				height: 35px;
 			}	
 		}
 		a {
 			&.open-menu {
+				text-indent: -999em;
+				left: 0;
+				width: 45px;
 				background: #092a67;
 				border-right: 1px solid rgba(255,255,255,.05);
-				left: 0;
-				text-indent: -999em;
-				width: 45px;
 				&:before {
 					background: url(../images/icons/openmenu.png) no-repeat;
 					background-size: 50%;
 					content: '';
 					display: inline-block;
 					height: 30px;
-					left: 12px;
+					width: 40px;
 					position: absolute;
 					top: 16px;
-					width: 40px;
+					left: 12px;
 				}
 			}
 			&.close-menu {
+				text-indent: -999em;
+				left: 0;
+				width: 45px;
 				background: #092a67;
 				border-right: 1px solid rgba(255,255,255,.05);
-				left: 0;
-				text-indent: -999em;
-				width: 45px;
 				&:before {
 					background: url(../images/icons/openmenu.png) no-repeat;
 					background-size: 50%;
 					content: '';
 					display: inline-block;
 					height: 30px;
-					left: 12px;
+					width: 40px;
 					position: absolute;
 					top: 16px;
-					width: 40px;
+					left: 12px;
 				}
 			}
 			&.back {
+				text-indent: -999em;
+				left: 0;
+				width: 45px;
 				background: #092a67;
 				border-right: 1px solid rgba(255,255,255,.05);
-				left: 0;
-				text-indent: -999em;
-				width: 45px;
 				&:before {
 					background: url(../images/icons/back.png) no-repeat;
 					background-size: 50%;
 					content: '';
 					display: inline-block;
 					height: 30px;
-					left: 12px;
+					width: 40px;
 					position: absolute;
 					top: 14px;
-					width: 40px;
+					left: 12px;
 				}
 			}
 		}
 	}
 	.content {
+		//padding: 15px;
+		//margin-top: 50px;
 		ul, ol, dl {
-			list-style: none;
+				list-style: none;
 		}
 		h1 {
 			margin-left: 10px;
@@ -131,24 +128,24 @@ body {
 		background: @medium;
 	}
 	h1 {
-		color: @link;
 		font-size: 12px;
-		font-weight: normal;
 		text-transform: uppercase;
+		font-weight: normal;
+		color: @link;
 	}
 	h2 {
-		color: @medium;
 		font-size: 10px;
+		color: @medium;
 	}
 	h3 {
-		color: @link;
 		font-size: 12px;
-		line-height: 1.6em;
 		text-transform: capitalize;
+		color: @link;
+		line-height: 1.6em;
 	}
 	h5 {
-		color: @link;
 		font-size: 11px;
+		color: @link;
 	}
 	
 	
@@ -157,183 +154,185 @@ body {
 	   Off-Canvas Nav
 	----------------------------------------- */
 
+/* Advanced Checkbox Hack */
+body { -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
 
+.main-header {
+background: rgb(12,47,115) url(../images/bkg-header-triangles.png) no-repeat right center;
+background-size: 60%;
+text-align: center;
+color: white;
+text-shadow: #00528a 0px -1px 0px;
+position: fixed;
+width: 100%;
+left: 0;
+-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+height: 45px;
+line-height: 45px;
+padding: 0;
+.transition(.3s);
+z-index: 99;
+}
 
-	.main-header {
-		background: rgb(12,47,115) url(../images/bkg-header-triangles.png) no-repeat right center;
-		background-size: 60%;
-		color: white;
-		height: 45px;
-		left: 0;
-		line-height: 45px;
-		padding: 0;
-		position: fixed;
-		text-align: center;
-		text-shadow: #00528a 0px -1px 0px;
-		width: 100%;
-		z-index: 99;
-		.drop-shadow(0px, 0px, 8px, 0.4);
-		.transition(.3s);
+.main-header a {
+	position: absolute;
+	left: 12px;
+	top: 0px;
+	color: white;
+	font-size: 32px;
+}
+
+.page-wrap {
+	float: right;
+	width: 100%;
+	.transition(.3s);
+}
+
+.main-nav {
+	position: fixed;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background: rgb(3,21,58);
+	overflow: hidden;
+	.transition(.3s);
+	 -webkit-user-select: none; 
+	 -webkit-transform: translate3d(0px, 0px, 0px); 
 	}
-
-	.main-header a {
-		color: white;
-		left: 12px;
-		font-size: 32px;
-		top: 0px;
-		position: absolute;
+.main-nav a {
+	display: block ;
+	height: 45px ;
+	line-height: 45px ;
+	padding: 0 0 0 15px;
+	border-top: 1px solid rgba(255,255,255,.05);
+	border-bottom: 1px solid rgba(0,0,0,.9);
+	color: white;
+	background: rgb(3,21,58);
+	overflow:hidden;
+	position: relative;
+	&.active {
+		background: rgb(23,47,93);
 	}
-
-	.page-wrap {
-		float: right;
-		width: 100%;
-		.transition(.3s);
-	}
-
-	.main-nav {
-		position: fixed;
-		top: 0;
-		width: 0;
-		height: 100%;
-		background: rgb(3,21,58);
-		overflow: hidden;
-		.transition(.3s);
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-		.translate3d(); 
-	}
-	.main-nav a {
-		display: block ;
-		height: 45px ;
-		line-height: 45px ;
-		padding: 0 0 0 15px;
-		border-top: 1px solid rgba(255,255,255,.05);
-		border-bottom: 1px solid rgba(0,0,0,.9);
-		color: white;
-		background: rgb(3,21,58);
-		overflow:hidden;
-		position: relative;
-		&.active {
-			background: rgb(23,47,93);
-		}
-		&.home {
+	&.home {
+		background: rgb(6,32,81) url(../images/logo.png) no-repeat;	
+		background-size: auto 20px;
+		text-indent: -999em;
+		background-position: 10px 5px;
+		height: 35px;
+		&:hover {
 			background: rgb(6,32,81) url(../images/logo.png) no-repeat;	
 			background-size: auto 20px;
 			text-indent: -999em;
 			background-position: 10px 5px;
-			height: 35px;
-			&:hover {
-				background: rgb(6,32,81) url(../images/logo.png) no-repeat;	
-				background-size: auto 20px;
-				text-indent: -999em;
-				background-position: 10px 5px;
-			}
 		}
-		&.icon {
-			text-indent: 30px;
+	}
+	&.icon {
+		text-indent: 30px;
+		&:after {
+			content: '';
+			display: inline-block;
+			height: 26px;
+			width: 26px;
+			position: absolute;
+			top: 16px;
+			left: 16px;
+		}
+		&.product {
 			&:after {
-				content: '';
-				display: inline-block;
-				height: 26px;
-				width: 26px;
-				position: absolute;
-				top: 16px;
-				left: 16px;
-			}
-			&.product {
-				&:after {
-					background: url(../images/icons/product.png) no-repeat;
-					background-size: 50%;
-				}
-			}
-			//Placeholder icon
-			&.ghost-white {
-				&:after {
-					background: url(../images/icons/ghost.png) no-repeat;
-					background-size: 50%;
-				}
-			}
-			&.news {
-				&:after {
-					background: url(../images/icons/news.png) no-repeat;
-					background-size: 50%;
-				}
-			}
-			&.rates {
-				&:after {
-					background: url(../images/icons/rates.png) no-repeat;
-					background-size: 50%;
-				}
-			}
-			&.price {
-				&:after {
-					background: url(../images/icons/price.png) no-repeat;
-					background-size: 50%;
-				}
-			}
-			&.gps {
-				&:after {
-					background: url(../images/icons/gps.png) no-repeat;
-					background-size: 50%;
-				}
-			}
-			&.contact {
-				&:after {
-					background: url(../images/icons/contact.png) no-repeat;
-					background-size: 50%;
-				}
-			}
-			&:before {
-				content: '';
-				background: rgb(9,46,115);
-				height: 25px;
-				width: 25px;
-				position: absolute;
-				left: 10px;
-				top: 10px;
-				.rounded(50%);
+				background: url(../images/icons/product.png) no-repeat;
+				background-size: 50%;
 			}
 		}
+		//Placeholder icon
+		&.ghost-white {
+			&:after {
+				background: url(../images/icons/ghost.png) no-repeat;
+				background-size: 50%;
+			}
+		}
+		&.news {
+			&:after {
+				background: url(../images/icons/news.png) no-repeat;
+				background-size: 50%;
+			}
+		}
+		&.rates {
+			&:after {
+				background: url(../images/icons/rates.png) no-repeat;
+				background-size: 50%;
+			}
+		}
+		&.price {
+			&:after {
+				background: url(../images/icons/price.png) no-repeat;
+				background-size: 50%;
+			}
+		}
+		&.gps {
+			&:after {
+				background: url(../images/icons/gps.png) no-repeat;
+				background-size: 50%;
+			}
+		}
+		&.contact {
+			&:after {
+				background: url(../images/icons/contact.png) no-repeat;
+				background-size: 50%;
+			}
+		}
+		&:before {
+			content: '';
+			background: rgb(9,46,115);
+			height: 25px;
+			width: 25px;
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			.rounded(50%);
+		}
 	}
-	.main-nav a:hover, .main-nav a:focus {
-		background: rgb(3,26,72);
+}
+.main-nav a:hover, .main-nav a:focus {
+	background: rgb(3,26,72);
 
-	}
+}
 
 
-	.content {
-		width:100%;
-		margin-left: 0%;
-		padding: 60px 0px 0 ;
-		.transition(.3s);
-		overflow: hidden;
-	}
+.content {
+	width:100%;
+	margin-left: 0%;
+	padding: 60px 0px 0 ;
+	.transition(.3s);
+	overflow: hidden;
+}
 
-	#theme-masthead .close-menu {
-		display: none;
-	}
+#theme-masthead .close-menu {
+	display: none;
+}
 
-	#main-nav:target {
-		width: 80%;
-	}
+#main-nav:target {
+	width: 80%;
+}
 
-	#main-nav:target + .page-wrap {
-		/* width: 20%; */
-	}
-	#main-nav:target + .page-wrap .open-menu {
-		display: none;
-	}
-	#main-nav:target + .page-wrap .close-menu {
-		display: block;
-	}
-	#main-nav:target + .page-wrap .main-header {
-		left: 80%;
-	}
-	#main-nav:target + .page-wrap .content {
-		float:left;
-		margin-left: 80%;
-	}
+#main-nav:target + .page-wrap {
+	/* width: 20%; */
+}
+#main-nav:target + .page-wrap .open-menu {
+	display: none;
+}
+#main-nav:target + .page-wrap .close-menu {
+	display: block;
+}
+#main-nav:target + .page-wrap .main-header {
+	left: 80%;
+}
+#main-nav:target + .page-wrap .content {
+	float:left;
+	margin-left: 80%;
+}
 	
 
 
@@ -744,55 +743,55 @@ body {
 	    .mblSimpleDialogDecoration {
 			.rounded(6px);
 			background-color: #063175;
-	    	background-image: none;
-			border: 1px solid #0b5ddf;
-			//re-enable for dialog testing
-			//display: block !important; top: 152px; left: 22px;
-			.box-sizing;
-			border: 1px solid #0b5ddf;
-			display: block;
-			left: 50%;
-			margin-left: -25px;
-			clip:rect(0px,62px,25px,0px);
-			&:before {
-				content: '';
-				height: 52px;
-				width: 52px;
-				position: absolute;
-				top: -25px;
-				.rounded(50%);
-				background-color: #063175;
-			}
-			&:after {
-				content: '';
-				position: absolute;
-				top: -15px;
-				left: 50%;
-				background: url(../images/icons/exclamation-mark.png) no-repeat;
-				background-size: 75%;
-				height: 40px;
-				width: 40px;
-				margin-left: -14px;
-			}
-			.mblSimpleDialogContainer {
-					padding: 10px 0 0;
-			   	.mblSimpleDialogTitle {
-				text-align:left;
-				padding:5px 10px;
-				line-height: 1.4em;
-				font-size: 16px;
-				}
-				.mblSimpleDialogText {
-					text-align:left;
-					padding:5px 10px;
-					color:gold;
-				}
-				.buttons {
-					background: @blank;
-					padding: 5px;
-					.border-radius(0px, 5px, 5px, 0px);
-					button {
-						width: 49%;
+	       background-image: none;
+	       border: 1px solid #0b5ddf;
+	       //re-enable for dialog testing
+	       //display: block !important; top: 152px; left: 22px;
+	       .box-sizing;
+	       &:before {
+	       	content: '';
+	       	height: 52px;
+	       	width: 52px;
+	       	position: absolute;
+	       	top: -25px;
+	       	.rounded(50%);
+	       	background-color: #063175;
+	        border: 1px solid #0b5ddf;
+	        display: block;
+	        left: 50%;
+	        margin-left: -25px;
+	        clip:rect(0px,62px,25px,0px);
+	       }
+	       &:after {
+	       	content: '';
+	       	position: absolute;
+	       	top: -15px;
+	       	left: 50%;
+	       	background: url(../images/icons/exclamation-mark.png) no-repeat;
+	       	background-size: 75%;
+	       	height: 40px;
+	       	width: 40px;
+	       	margin-left: -14px;
+	       }
+	       .mblSimpleDialogContainer {
+	       		padding: 10px 0 0;
+		       	.mblSimpleDialogTitle {
+		    	text-align:left;
+		    	padding:5px 10px;
+		    	line-height: 1.4em;
+		    	font-size: 16px;
+		    	}
+		    	.mblSimpleDialogText {
+		    		text-align:left;
+		    		padding:5px 10px;
+		    		color:gold;
+		    	}
+		    	.buttons {
+		    		background: @blank;
+		    		padding: 5px;
+		    		.border-radius(0px, 5px, 5px, 0px);
+		    		button {
+		    			width: 49%;
 						border-radius: 8px;
 						color: @blank;
 						font-size: 16px;
@@ -800,10 +799,10 @@ body {
 						.box-shadow(0px 2px 6px rgba( 6, 76, 114, .2 ));
 						height: 37px;
 						border: none;
-						.box-sizing;
-					}
-				}
-			}
+		    			.box-sizing;
+		    		}
+		    	}
+	       }
 	    }
 	    
 	    
