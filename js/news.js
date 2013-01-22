@@ -3,10 +3,11 @@ var lastNewsId = 0;
 						[
 						 "dojo/ready"
 						 ,"dijit/registry"
+						 , "dojo/dom-attr"
 						 ,"dojox/mobile/ListItem"
-						 ,"dojox/mobile/EdgeToEdgeList"
+						 ,"dojox/mobile/RoundRectList"
 						 
-                    ], function(ready, registry, ListItem){
+                    ], function(ready, registry, attr, ListItem){
                         ready(function(){
 							LoadMoreNews();
                             var newslistvsw = registry.byId('newslistvsw');
@@ -18,7 +19,10 @@ var lastNewsId = 0;
                                     LoadMoreNews();
                                 }
                             }
-							
+							slideToNews = function(id)
+							{
+								slideTo('news-detail.html?id='+id);
+							}
                          });
 						function LoadMoreNews(){
 							var list = registry.byId("newslistvl");
@@ -29,12 +33,12 @@ var lastNewsId = 0;
                                     for(var i = 1; i <= 10; i++){
 
                                         var item1 = new ListItem({
-                                            icon: "images/i-icon-1.png",
-                                            //label: 'NEWS VIEW' + lastNewsId + '<br/>' + content,
 											label: content,
 											variableHeight: true,
-											href:"news-detail.html?id="+lastNewsId,
+											href:'news-detail.html?id='+lastNewsId
+											
                                         });
+										
                                         list.addChild(item1);
                                         lastNewsId++;
                                     }

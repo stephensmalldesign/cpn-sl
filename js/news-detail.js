@@ -34,7 +34,7 @@ var lastId = 0;
 							
 							var pane = new dojox.mobile.ContentPane({
 																	id:'cp'+newsid,
-																href:'content/news-detail-test.html'	
+																	href:'content/news-detail-test.html'	
 																	});
 							//sp.containerNode.addChild(pane);
 							//var content = 'NEWS VIEW' + newsid + '<br/>' + dojo.byId('newsDetailTemplate').innerHTML;
