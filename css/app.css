@@ -960,6 +960,9 @@ body .main-header a {
   color: white;
   font-size: 32px;
 }
+body #main {
+  height: 100%;
+}
 body .page-wrap {
   float: right;
   width: 100%;
