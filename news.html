@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"
                 content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
@@ -11,33 +19,38 @@
 
 <script src="js/modernizr.foundation.js"></script>
   <script src="js/less-1.3.1.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.1/dojo/dojo.js"
-         data-dojo-config="async: false, parseOnLoad: true, mblThemeFiles: ['base','PageIndicator', 'SimpleDialog', 'Button']"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.2/dojo/dojo.js"
+         data-dojo-config="async: false, parseOnLoad: true, mblThemeFiles: ['base','PageIndicator', 'SimpleDialog', 'Button', 'RoundRectList']"></script>
+         
   <script type="text/javascript">
                 require([
-						 "dojo/query"
+						 "dojox/mobile/View"
+						 ,"dojox/mobile/Button"
+						 ,"dojox/mobile/SimpleDialog"
+						 ,"dojox/mobile/Container"
+                    	 ,"dojox/mobile/ScrollableView"
+					     ,"dojox/mobile/PageIndicator"
+						 ,"dojox/mobile/SwapView"
+						 ,"dojox/mobile/RoundRectList"
+						 
+						 , "dojox/mobile"
+						 , "dojo/query"
 						 , "dojo/dom-attr"
 						 , "dojox/mobile/parser"
+						 , "dojox/mobile/deviceTheme"
 						 , "dojo/ready"
 						 , "dijit/registry"
 						 , "dojox/mobile/compat"
 						 , "dojox/mobile/View"
 						 , "dojox/mobile/ViewController"
-						 , "dojox/mobile/Button"
-						 , "dojox/mobile/SimpleDialog"
-						 
-						 ,"dojox/mobile/Container"
-                    	 ,"dojox/mobile/ScrollableView"
-					     ,"dojox/mobile/PageIndicator"
-						 ,"dojox/mobile/SimpleDialog"
-						 ,"dojox/mobile/SwapView"
-						 
                     ]);
-        </script>       
+        </script>      
+  <script src="js/common.js"></script>
+  <script src="js/news.js"></script> 
 </head>
 <body>
 <div id="main" data-dojo-type="dojox.mobile.View" style="display:none">
-  <nav class="main-nav" id="main-nav">
+ <nav class="main-nav" id="main-nav">
     <a href="index.html" class="active slide home">Home</a>
     <a href="mutual-landing.html" class="icon product slide">Products &amp; Solutions</a>
     <a href="price-performance.html" class="icon rates slide">Rates Price &amp; Performance</a>
@@ -49,14 +62,13 @@
     <div id="theme-masthead" class="masthead main-header"> <a href="#main-nav" class="open-menu">☰</a> <a href="#" class="close-menu">☰</a>
           <h1 class="logo">Standard Life</h1>
         </div>
-    <!-- end masthead -->
     <div id="theme-page" class="row content">
           <div id="newslistvv" data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
-        <div id="newslistvsw" class="content news" data-dojo-type="dojox.mobile.ScrollableView"  data-dojo-props='scrollBar:true, fadeScrollBar:true' style="position:relative">
+        <div id="newslistvsw" class="content news" data-dojo-type="dojox.mobile.ScrollableView"  data-dojo-props='scrollBar:true' style="position:relative">
               <!-- add content -->
               <h1>News</h1>
-              <ul id="newslistvl" class="newslist" data-dojo-type="dojox.mobile.EdgeToEdgeList">
-            <li id="loadingMore" data-dojo-type="dojox.mobile.ListItem"  data-dojo-props='icon:"images/i-icon-2.png",variableHeight:true'>Loading more... Please wait<br/>
+              <ul id="newslistvl" class="newslist" data-dojo-type="dojox.mobile.RoundRectList">
+            <li id="loadingMore" data-dojo-type="dojox.mobile.ListItem"  data-dojo-props='variableHeight:true, href:"google.com"'>Loading more... Please wait<br/>
                   <br/>
                   <br/>
                   <br/>
@@ -67,17 +79,16 @@
             </div>
       </div>
           <div id="newslisttemplate" style="display:none">
-          
-        <div class="panel">
-        <h2>Standard Life to introduce end-to-end...</h2>
-              <time>November 13, 2012</time>
-              <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
+              
+            <div class="panel">
+            <h2>Standard Life to introduce end-to-end...</h2>
+                  <time>November 13, 2012</time>
+                  <p class="truncated">Standard Life's group insurance customers – plan sponsors and members, and intermediaries –will soon benefit from an integrated electronic healthcare claim management solution, which will</p>
             </div>
-      </div>
-        </div>
-  </div>
-  <script src="js/common.js"></script>
-  <script src="js/news.js"></script>
+  		</div>
+	</div>
+
 </div>
 </body>
+
 </html>
