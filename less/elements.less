@@ -12,6 +12,14 @@
 -----------------------------------------------------*/
 
 
+.animation(@arguments) {
+  -webkit-animation: @arguments; 
+  -moz-animation: @arguments; 
+  -ms-animation: @arguments; 
+  -o-animation: @arguments; 
+  animation: @arguments; 
+}
+
 .box-sizing(@type: border-box) {
   -webkit-box-sizing: @type;
   -moz-box-sizing:    @type;
@@ -148,4 +156,13 @@
   -o-transform: translate(@x, @y);
   -ms-transform: translate(@x, @y);
   transform: translate(@x, @y);
+}
+
+.translate3d(@arguments: 0px 0px 0px) {
+  //mozilla does not yet support 3d transforms
+  //-moz-transform: translate3d(@arguments));
+  -webkit-transform: translate3d(@arguments);
+  -o-transform: translate3d(@arguments);
+  -ms-transform: translate3d(@arguments);
+  transform: translate3d(@arguments);
 }
