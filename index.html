@@ -39,110 +39,108 @@
 </head>
 <body class="claro">
 	<div id="main" data-dojo-type="dojox.mobile.View" style="display:none">
-    <div id="c-list" data-dojo-type="dojox.mobile.SwapView" >
-          <nav class="main-nav" id="main-nav">
-            <a href="index.html" class="active slide home">Home</a>
-            <a href="my-gps.html" class="icon gps slide">My Business GPS</a>
-            <a href="price-performance.html" class="icon price slide">Price &amp; Performance</a>
-            <a href="rates.html" class="icon rates slide">Rates</a>
-            <a href="news.html" class="icon news slide">News</a>
-            <a href="contact.html" class="icon contact slide">Contact Us</a>
-          </nav>
-      <div class="page-wrap" >
-          <div id="theme-masthead" class="masthead main-header">
-              <a href="#main-nav" class="open-menu">Open Menu</a>
-                <a href="#" class="close-menu">Close Menu</a>
-                <h1 class="logo">Standard Life</h1>
-            
-          </div><!-- end masthead -->
-         <div id="theme-page" class="row content">
-         	<div id="carousel"  data-dojo-type="dojox.mobile.Container" style="height:450">
-                <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"1"' style="text-align:center">
-                    <img alt="" src="images/banner1.png"/>
-                </div>
-                <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"420"' style="text-align:center">
-                    <img alt="" src="images/banner2.png"/>
-                </div>
-                <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"420"' style="text-align:center">
-                    <img alt="" src="images/banner3.png"/>
-                </div>
-                <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"1"' style="text-align:center">
-                    <img alt="" src="images/banner1.png"/>
-                </div>
-                <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"420"' style="text-align:center">
-                    <img alt="" src="images/banner2.png"/>
-                </div>
-                <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"420"' style="text-align:center">
-                    <img alt="" src="images/banner3.png"/>
-                </div>
-                <div data-dojo-type="dojox.mobile.PageIndicator"></div>
-                <br/>
-          	</div><!--carousel-->
-            <div data-dojo-type="dojox.mobile.Container">
-				<!-- Button Navigation -->
-              <nav class="buttonnav">
-                 
-                  <a href="my-gps.html" class="slide">
-                    <div class="panel callout radius">
-                      <i class="icon gps"></i>
-                    </div>
-                    <p>My Business GPS</p>
-                  </a>
-
-                   <a href="price-performance.html" class="slide">
-                    <div class="panel callout radius">
-                      <i class="icon price"></i>
-                    </div>
-                    <p>Price &amp; Performance</p>
-                  </a>
-
-                  <a href="rates.html" class="slide">
-                    <div class="panel callout radius">
-                      <i class="icon rates"></i>
-                    </div>
-                    <p>Rates</p>
-                  </a>
-
-                  <a href="news.html" class="slide">
-                    <div class="panel callout radius">
-                      <i class="icon news"></i>
-                    </div>
-                    <p>News</p>
-                  </a>
-                  <a href="contact.html" class="slide">
-                    <div class="panel callout radius">
-                      <i class="icon contact"></i>
-                    </div>
-                    <p>Contact Us</p>
-                  </a>
-        
-              </nav>
-            </div>
-            <div data-dojo-type="dojox.mobile.Container" class="footer">
-           		<table width="100%">
-                	<tr>
-                    	<td>
-                        	<a href="#" onClick="show('dlg_confirm_nomobile')">Desktop Website</a>
-                        </td>
-                        <td>
-	                        <a href="#">Legal Information</a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div id="dlg_confirm_nomobile" data-dojo-type="dojox.mobile.SimpleDialog">
-              
-              <div class="mblSimpleDialogTitle">This links to a page without a mobile layout.</div>
-              <div class="mblSimpleDialogText">Open it anyway?</div>
-              <div class="buttons">
-                <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton" onClick="hide('dlg_confirm_nomobile')">No</button>
-                <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton mblBlueButton" onClick="hide('dlg_confirm_nomobile')">Yes</button>
+        <nav class="main-nav" id="main-nav">
+          <a href="index.html" class="active slide home">Home</a>
+          <a href="my-gps.html" class="icon gps slide">My Business GPS</a>
+          <a href="price-performance.html" class="icon price slide">Price &amp; Performance</a>
+          <a href="rates.html" class="icon rates slide">Rates</a>
+          <a href="news.html" class="icon news slide">News</a>
+          <a href="contact.html" class="icon contact slide">Contact Us</a>
+        </nav>
+    <div class="page-wrap" >
+        <div id="theme-masthead" class="masthead main-header">
+            <a href="#main-nav" class="open-menu">Open Menu</a>
+              <a href="#" class="close-menu">Close Menu</a>
+              <h1 class="logo">Standard Life</h1>
+          
+        </div><!-- end masthead -->
+       <div id="theme-page" class="row content">
+       	<div id="carousel"  data-dojo-type="dojox.mobile.Container" style="height:450">
+              <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"1"' style="text-align:center">
+                  <img alt="" src="images/banner1.png"/>
               </div>
-              
+              <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"420"' style="text-align:center">
+                  <img alt="" src="images/banner2.png"/>
+              </div>
+              <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"420"' style="text-align:center">
+                  <img alt="" src="images/banner3.png"/>
+              </div>
+              <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"1"' style="text-align:center">
+                  <img alt="" src="images/banner1.png"/>
+              </div>
+              <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"420"' style="text-align:center">
+                  <img alt="" src="images/banner2.png"/>
+              </div>
+              <div data-dojo-type="dojox.mobile.SwapView" data-dojo-props='height:"420"' style="text-align:center">
+                  <img alt="" src="images/banner3.png"/>
+              </div>
+              <div data-dojo-type="dojox.mobile.PageIndicator"></div>
+              <br/>
+        	</div><!--carousel-->
+          <div data-dojo-type="dojox.mobile.Container">
+			<!-- Button Navigation -->
+            <nav class="buttonnav">
+               
+                <a href="my-gps.html" class="slide">
+                  <div class="panel callout radius">
+                    <i class="icon gps"></i>
+                  </div>
+                  <p>My Business GPS</p>
+                </a>
+
+                 <a href="price-performance.html" class="slide">
+                  <div class="panel callout radius">
+                    <i class="icon price"></i>
+                  </div>
+                  <p>Price &amp; Performance</p>
+                </a>
+
+                <a href="rates.html" class="slide">
+                  <div class="panel callout radius">
+                    <i class="icon rates"></i>
+                  </div>
+                  <p>Rates</p>
+                </a>
+
+                <a href="news.html" class="slide">
+                  <div class="panel callout radius">
+                    <i class="icon news"></i>
+                  </div>
+                  <p>News</p>
+                </a>
+                <a href="contact.html" class="slide">
+                  <div class="panel callout radius">
+                    <i class="icon contact"></i>
+                  </div>
+                  <p>Contact Us</p>
+                </a>
+      
+            </nav>
+          </div>
+          <div data-dojo-type="dojox.mobile.Container" class="footer">
+         		<table width="100%">
+              	<tr>
+                  	<td>
+                      	<a href="#" onClick="show('dlg_confirm_nomobile')">Desktop Website</a>
+                      </td>
+                      <td>
+                        <a href="#">Legal Information</a>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+          <div id="dlg_confirm_nomobile" data-dojo-type="dojox.mobile.SimpleDialog">
+            
+            <div class="mblSimpleDialogTitle">This links to a page without a mobile layout.</div>
+            <div class="mblSimpleDialogText">Open it anyway?</div>
+            <div class="buttons">
+              <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton" onClick="hide('dlg_confirm_nomobile')">No</button>
+              <button data-dojo-type="dojox.mobile.Button" class="mblSimpleDialogButton mblBlueButton" onClick="hide('dlg_confirm_nomobile')">Yes</button>
             </div>
-        </div><!-- theme-page -->
-      </div><!-- page-wrap -->
-    </div><!-- c-list -->
+            
+          </div>
+      </div><!-- theme-page -->
+    </div><!-- page-wrap -->
 	</div><!-- home -->
 
 </body>
