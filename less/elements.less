@@ -105,11 +105,9 @@
   -moz-transform:scale(@ratio);
   transform:scale(@ratio);
 }
-.transition(@element: all, @duration: 0.3s, @ease: ease-out) {
+.transition(@element: all, @duration:0.2s, @ease:ease-out) {
   -webkit-transition: @element @duration @ease;
   -moz-transition: @element @duration @ease;
-  -ms-transition: @element @duration @ease;
-  -o-transition: @element @duration @ease;
   transition: @element @duration @ease;
 }
 .inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
